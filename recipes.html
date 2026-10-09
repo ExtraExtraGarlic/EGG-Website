@@ -152,13 +152,21 @@ nav {
 
 /* SEARCH */
 .search-wrap {
-  padding: 24px 48px;
+  padding: 20px 48px 0;
   max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
 }
 
+.search-box {
+  position: relative; flex: 1; min-width: 200px; max-width: 420px;
+}
+.search-icon {
+  position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  font-size: 0.9rem; opacity: 0.45; pointer-events: none;
+}
 .search-input {
-  width: 100%; max-width: 400px;
-  padding: 12px 20px;
+  width: 100%;
+  padding: 12px 20px 12px 40px;
   background: rgba(30,20,8,0.07);
   border: 1.5px solid rgba(30,20,8,0.12);
   border-radius: 100px;
@@ -166,9 +174,60 @@ nav {
   font-size: 0.88rem; color: var(--brown);
   outline: none;
   transition: border-color 0.2s;
+  box-sizing: border-box;
 }
 .search-input::placeholder { color: var(--text-muted); }
 .search-input:focus { border-color: var(--garlic); }
+.search-clear {
+  position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer;
+  font-size: 1rem; color: var(--text-muted); line-height: 1;
+  display: none; padding: 2px 4px;
+}
+.search-clear.visible { display: block; }
+
+.filter-chips {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+}
+.filter-chip {
+  padding: 8px 16px;
+  border: 1.5px solid rgba(30,20,8,0.15);
+  border-radius: 100px;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  cursor: pointer; transition: all 0.15s;
+  white-space: nowrap;
+}
+.filter-chip:hover { border-color: var(--garlic); color: var(--brown); }
+.filter-chip.active {
+  background: var(--garlic); border-color: var(--garlic);
+  color: var(--cream);
+}
+.filter-chip.active:hover { opacity: 0.85; }
+
+.search-results-bar {
+  max-width: 1100px; margin: 0 auto;
+  padding: 10px 48px 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem; color: var(--text-muted);
+  display: none;
+}
+.search-results-bar.visible { display: block; }
+
+/* search mode: flat list of all matching rows */
+.search-results-section { display: none; }
+.search-results-section.active { display: block; }
+.rr-cat-badge {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--garlic);
+  background: rgba(160,98,42,0.1);
+  padding: 2px 8px; border-radius: 100px;
+  margin-left: auto; margin-right: 8px;
+  white-space: nowrap;
+}
 
 /* RECIPE SECTIONS */
 .recipes-wrap {
@@ -262,7 +321,9 @@ footer {
   nav { padding: 0 20px; }
   .page-header { padding: 100px 20px 32px; flex-direction: column; align-items: flex-start; }
   .tab-bar { padding: 0 20px; }
-  .search-wrap, .recipes-wrap { padding-left: 20px; padding-right: 20px; }
+  .search-wrap, .recipes-wrap, .search-results-bar { padding-left: 20px; padding-right: 20px; }
+  .search-wrap { flex-direction: column; align-items: stretch; }
+  .search-box { max-width: 100%; }
   .rr-meta { display: none; }
 }
 </style>
@@ -292,13 +353,31 @@ footer {
   <button class="tab-btn" onclick="showTab('az')">A–Z Index</button>
 </div>
 
-<!-- SEARCH -->
+<!-- SEARCH + FILTER -->
 <div class="search-wrap">
-  <input class="search-input" type="text" placeholder="Search recipes…" id="searchInput" oninput="filterRecipes(this.value)">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" type="text" placeholder="Search recipes or keywords…" id="searchInput" oninput="handleSearch(this.value)" autocomplete="off">
+    <button class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Clear search">✕</button>
+  </div>
+  <div class="filter-chips" id="filterChips">
+    <button class="filter-chip active" data-filter="all" onclick="setFilter('all', this)">All</button>
+    <button class="filter-chip" data-filter="full_meals" onclick="setFilter('full_meals', this)">Full Meals</button>
+    <button class="filter-chip" data-filter="sides" onclick="setFilter('sides', this)">Sides &amp; Sauces</button>
+    <button class="filter-chip" data-filter="pizza" onclick="setFilter('pizza', this)">Pizza</button>
+    <button class="filter-chip" data-filter="desserts" onclick="setFilter('desserts', this)">Desserts &amp; Baking</button>
+  </div>
+</div>
+<div class="search-results-bar" id="searchResultsBar"></div>
+
+<!-- SEARCH RESULTS (shown when searching) -->
+<div class="recipes-wrap search-results-section" id="searchResultsWrap" style="display:none">
+  <div id="searchResultsList"></div>
+  <div class="no-results" id="noResults" style="display:none">No recipes found for that search.</div>
 </div>
 
 <!-- RECIPES -->
-<div class="recipes-wrap">
+<div class="recipes-wrap" id="mainRecipesWrap">
 
   <!-- ALL -->
   <div class="recipe-section active" id="section-all">
@@ -1432,8 +1511,6 @@ footer {
     </a>
   </div>
 
-  <div class="no-results" id="noResults">No recipes found.</div>
-
   <!-- A–Z INDEX -->
   <div class="recipe-section az-section" id="section-az">
 
@@ -1576,6 +1653,14 @@ footer {
 
 <script>
 let currentTab = 'all';
+let activeFilter = 'all';
+
+const CAT_LABELS = {
+  full_meals: 'Full Meals',
+  sides: 'Sides & Sauces',
+  pizza: 'Pizza',
+  desserts: 'Desserts & Baking'
+};
 
 function showTab(tab) {
   currentTab = tab;
@@ -1583,24 +1668,95 @@ function showTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('section-' + tab).classList.add('active');
   event.target.classList.add('active');
-  document.getElementById('searchInput').value = '';
-  document.querySelectorAll('.recipe-row').forEach(r => r.style.display = '');
-  document.getElementById('noResults').style.display = 'none';
+  clearSearch();
 }
 
-function filterRecipes(val) {
-  val = val.toLowerCase().trim();
-  const activeSection = document.getElementById('section-' + currentTab);
-  const rows = activeSection.querySelectorAll('.recipe-row');
-  let visible = 0;
-  rows.forEach(r => {
-    const name = r.querySelector('.rr-name').textContent.toLowerCase();
-    const meta = r.querySelector('.rr-meta') ? r.querySelector('.rr-meta').textContent.toLowerCase() : '';
-    const show = !val || name.includes(val) || meta.includes(val);
-    r.style.display = show ? '' : 'none';
-    if (show) visible++;
+function setFilter(filter, el) {
+  activeFilter = filter;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  const val = document.getElementById('searchInput').value;
+  if (val.trim()) {
+    runSearch(val.trim().toLowerCase());
+  } else {
+    // no search active — just show/hide sections in main wrap
+    showMainSections();
+  }
+}
+
+function showMainSections() {
+  document.getElementById('searchResultsWrap').style.display = 'none';
+  document.getElementById('mainRecipesWrap').style.display = '';
+  document.getElementById('searchResultsBar').classList.remove('visible');
+
+  // sync tab bar to filter
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  const tabMap = { all: 'all', full_meals: 'full_meals', sides: 'sides', pizza: 'pizza', desserts: 'desserts', az: 'az' };
+  const matchTab = tabMap[activeFilter];
+  if (matchTab && document.getElementById('section-' + matchTab)) {
+    document.querySelectorAll('.recipe-section').forEach(s => s.classList.remove('active'));
+    document.getElementById('section-' + matchTab).classList.add('active');
+    // activate corresponding tab btn
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + matchTab + "'")) {
+        b.classList.add('active');
+      }
+    });
+  }
+}
+
+function handleSearch(val) {
+  const clearBtn = document.getElementById('searchClear');
+  clearBtn.classList.toggle('visible', val.length > 0);
+  val = val.trim().toLowerCase();
+  if (!val) {
+    showMainSections();
+    return;
+  }
+  runSearch(val);
+}
+
+function runSearch(val) {
+  // gather all recipe rows from the main wrap (not az section, not search section)
+  const allRows = document.querySelectorAll('#mainRecipesWrap .recipe-row');
+  const resultsList = document.getElementById('searchResultsList');
+  const bar = document.getElementById('searchResultsBar');
+  resultsList.innerHTML = '';
+
+  let count = 0;
+  allRows.forEach(row => {
+    const cat = row.getAttribute('data-cat') || '';
+    if (activeFilter !== 'all' && cat !== activeFilter) return;
+    const name = (row.querySelector('.rr-name') ? row.querySelector('.rr-name').textContent : '').toLowerCase();
+    const meta = (row.querySelector('.rr-meta') ? row.querySelector('.rr-meta').textContent : '').toLowerCase();
+    if (name.includes(val) || meta.includes(val)) {
+      // clone row and inject category badge
+      const clone = row.cloneNode(true);
+      const arrow = clone.querySelector('.rr-arrow');
+      const badge = document.createElement('span');
+      badge.className = 'rr-cat-badge';
+      badge.textContent = CAT_LABELS[cat] || cat;
+      if (arrow) clone.insertBefore(badge, arrow);
+      resultsList.appendChild(clone);
+      count++;
+    }
   });
-  document.getElementById('noResults').style.display = visible === 0 && val ? 'block' : 'none';
+
+  document.getElementById('mainRecipesWrap').style.display = 'none';
+  document.getElementById('searchResultsWrap').style.display = '';
+  document.getElementById('noResults').style.display = count === 0 ? 'block' : 'none';
+
+  bar.textContent = count === 0 ? '' : count + ' recipe' + (count !== 1 ? 's' : '') + ' found';
+  bar.classList.toggle('visible', count > 0);
+}
+
+function clearSearch() {
+  const input = document.getElementById('searchInput');
+  input.value = '';
+  document.getElementById('searchClear').classList.remove('visible');
+  document.getElementById('searchResultsBar').classList.remove('visible');
+  showMainSections();
+  input.focus();
 }
 </script>
 </body>
