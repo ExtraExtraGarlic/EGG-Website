@@ -12,9 +12,50 @@
 
 :root {
   --yellow: #ECC666;
+  --cream: #FAF3DC;
   --brown: #1E1408;
   --garlic: #A0622A;
   --text-muted: rgba(30,20,8,0.5);
+}
+
+/* A–Z LIST STYLES */
+.az-section {
+  padding: 0 0 80px;
+}
+.az-letter-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 900;
+  color: var(--garlic);
+  background: var(--cream);
+  padding: 20px 0 10px;
+  border-bottom: 2px solid rgba(160,98,42,0.18);
+  margin-bottom: 4px;
+  letter-spacing: -1px;
+}
+.az-row {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(30,20,8,0.07);
+  text-decoration: none;
+  color: var(--brown);
+  background: var(--cream);
+  transition: padding-left 0.15s;
+  cursor: pointer;
+}
+.az-row:hover { padding-left: 6px; }
+.az-row:hover .az-name { color: var(--garlic); }
+.az-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--brown);
+  transition: color 0.15s;
+  line-height: 1.2;
+}
+.az-desc {
+  font-size: 0.72rem; font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 3px;
+  line-height: 1.45;
 }
 
 body {
@@ -248,6 +289,7 @@ footer {
   <button class="tab-btn" onclick="showTab('sides')">Sides &amp; Sauces · 20</button>
   <button class="tab-btn" onclick="showTab('pizza')">Pizza · 1</button>
   <button class="tab-btn" onclick="showTab('desserts')">Desserts &amp; Baking · 16</button>
+  <button class="tab-btn" onclick="showTab('az')">A–Z Index</button>
 </div>
 
 <!-- SEARCH -->
@@ -1391,6 +1433,141 @@ footer {
   </div>
 
   <div class="no-results" id="noResults">No recipes found.</div>
+
+  <!-- A–Z INDEX -->
+  <div class="recipe-section az-section" id="section-az">
+
+    <div class="az-letter-head">A</div>
+    <div class="az-row"><div class="az-name">Authentic Mexican Rice</div><div class="az-desc">Toasted long-grain rice cooked in a rich tomato base with garlic and cumin</div></div>
+    <div class="az-row"><div class="az-name">Avocado Egg Rolls</div><div class="az-desc">Crispy fried wrappers packed with a creamy avocado and sun-dried tomato filling</div></div>
+
+    <div class="az-letter-head">B</div>
+    <div class="az-row"><div class="az-name">BBQ Grilled Chicken</div><div class="az-desc">Smoky sweet glaze with a proper char finish — backyard staple</div></div>
+    <div class="az-row"><div class="az-name">Biscoff Butter Cookies</div><div class="az-desc">Speculoos-spiced dough with a chewy center and crispy edge</div></div>
+    <div class="az-row"><div class="az-name">Black Pepper Chicken</div><div class="az-desc">Wok-tossed chicken with bold cracked pepper heat and oyster sauce</div></div>
+    <div class="az-row"><div class="az-name">Blueberry Muffins</div><div class="az-desc">Moist bakery-style crumb with a burst-top crust and lemon zest</div></div>
+    <div class="az-row"><div class="az-name">Bolognese</div><div class="az-desc">Low and slow meat sauce finished with milk — the real way</div></div>
+    <div class="az-row"><div class="az-name">Browned Butter Toffee Choc Chip Cookies</div><div class="az-desc">Nutty, deep, crisp-edged cookies with toffee bits and dark chocolate</div></div>
+    <div class="az-row"><div class="az-name">Buffalo Chicken &amp; Chickpea Salad</div><div class="az-desc">Spicy buffalo heat with cool ranch, chickpeas, and crisp celery</div></div>
+    <div class="az-row"><div class="az-name">Butter Chicken</div><div class="az-desc">Silky tomato-cream sauce with tender marinated chicken</div></div>
+    <div class="az-row"><div class="az-name">Buttermilk Breakfast Trio</div><div class="az-desc">Pancakes, scrambled eggs, and crispy bacon — the whole spread done right</div></div>
+
+    <div class="az-letter-head">C</div>
+    <div class="az-row"><div class="az-name">Cabbage &amp; Carrot Slaw</div><div class="az-desc">Tangy crunch that belongs on every taco, bowl, or sandwich</div></div>
+    <div class="az-row"><div class="az-name">Carnitas</div><div class="az-desc">Slow-braised pork shoulder crisped up in its own fat</div></div>
+    <div class="az-row"><div class="az-name">Charred Poblano Black Bean Salad</div><div class="az-desc">Smoky, earthy side with roasted pepper and lime vinaigrette</div></div>
+    <div class="az-row"><div class="az-name">Cheesy Frijoles Charros</div><div class="az-desc">Bacon-studded cowboy beans with melted cheese and jalapeño</div></div>
+    <div class="az-row"><div class="az-name">Chicken Burritos</div><div class="az-desc">Stuffed tight with rice, beans, and seasoned chicken — seared on the flat top</div></div>
+    <div class="az-row"><div class="az-name">Chicken Enchiladas Verdes</div><div class="az-desc">Roasted tomatillo sauce poured over rolled chicken enchiladas, baked with cheese</div></div>
+    <div class="az-row"><div class="az-name">Chicken Gyros</div><div class="az-desc">Marinated thighs, spit-style char done at home, loaded in warm pita</div></div>
+    <div class="az-row"><div class="az-name">Chicken Marsala</div><div class="az-desc">Marsala wine and mushroom pan sauce over golden pounded chicken</div></div>
+    <div class="az-row"><div class="az-name">Chicken Shawarma</div><div class="az-desc">Spiced thighs with white garlic sauce and pickled turnips</div></div>
+    <div class="az-row"><div class="az-name">Chuck Roast Sandwich</div><div class="az-desc">Braised beef piled onto a toasted hoagie with horseradish</div></div>
+    <div class="az-row"><div class="az-name">Chunky Cinnamon French Toast</div><div class="az-desc">Thick-cut bread, custard-soaked overnight, pan-caramelized and dusted with cinnamon sugar</div></div>
+    <div class="az-row"><div class="az-name">Cinnamon Rolls (Brown Butter Frosting)</div><div class="az-desc">Soft rolls with a brown butter cream cheese frosting that soaks right in</div></div>
+    <div class="az-row"><div class="az-name">Coconut Lime Cilantro Grilled Chicken</div><div class="az-desc">Bright tropical marinade with coconut milk, lime, and fresh cilantro</div></div>
+    <div class="az-row"><div class="az-name">Creamy Garlic Chicken Pasta</div><div class="az-desc">One-pan weeknight pasta, heavy on the garlic, light on the effort</div></div>
+    <div class="az-row"><div class="az-name">Crispy Roast Potatoes</div><div class="az-desc">Par-boiled, shaken rough, roasted in duck fat until shatteringly crisp</div></div>
+    <div class="az-row"><div class="az-name">Crockpot Alfredo Meatballs</div><div class="az-desc">Set it before work, eat when you get home — creamy alfredo with homemade meatballs</div></div>
+    <div class="az-row"><div class="az-name">Cuban Black Beans &amp; Rice</div><div class="az-desc">Sofrito-seasoned black beans over fluffy white rice</div></div>
+
+    <div class="az-letter-head">D</div>
+    <div class="az-row"><div class="az-name">Detroit-Style Pizza</div><div class="az-desc">Thick rectangular pan pizza with lacey-edged cheese crust and sauce on top</div></div>
+
+    <div class="az-letter-head">F</div>
+    <div class="az-row"><div class="az-name">Filipino Pork Adobo</div><div class="az-desc">Soy-vinegar braise that gets better the next day — Filipino comfort food</div></div>
+    <div class="az-row"><div class="az-name">Fluffy Pancakes</div><div class="az-desc">Tall cloud-style stack, light and airy with crispy lacy edges</div></div>
+    <div class="az-row"><div class="az-name">French Chicken Casserole</div><div class="az-desc">White wine, herbs, and vegetables braised together — low effort, big payoff</div></div>
+
+    <div class="az-letter-head">G</div>
+    <div class="az-row"><div class="az-name">Garlic Naan</div><div class="az-desc">Skillet-charred flatbread brushed with garlic butter and fresh cilantro</div></div>
+    <div class="az-row"><div class="az-name">Greek Salad</div><div class="az-desc">Kalamata olives, feta, cucumber, and tomato — no lettuce needed</div></div>
+    <div class="az-row"><div class="az-name">Greek Yogurt Chicken Wrap</div><div class="az-desc">Tzatziki, marinated chicken, and fresh veg in a warm flatbread</div></div>
+    <div class="az-row"><div class="az-name">Green Chili Chicken Dip</div><div class="az-desc">Creamy, spicy, cheesy dip ready for a full bag of chips</div></div>
+
+    <div class="az-letter-head">H</div>
+    <div class="az-row"><div class="az-name">Halal Cart Garlic Sauce</div><div class="az-desc">NYC white sauce copycat — aggressively garlicky, tangy, slightly sweet</div></div>
+    <div class="az-row"><div class="az-name">Harissa Chicken</div><div class="az-desc">North African spice paste marinade with charred edges and yogurt</div></div>
+    <div class="az-row"><div class="az-name">Homemade Blueberry Toaster Pastries</div><div class="az-desc">Pop-Tart made from scratch with a flaky pastry shell and blueberry jam</div></div>
+    <div class="az-row"><div class="az-name">Homemade Pita Bread</div><div class="az-desc">Pockets that puff up hot off the pan — ready in under an hour</div></div>
+    <div class="az-row"><div class="az-name">Homemade Ranch</div><div class="az-desc">From-scratch buttermilk ranch with fresh dill, chives, and garlic</div></div>
+
+    <div class="az-letter-head">J</div>
+    <div class="az-row"><div class="az-name">Jamaican Brown Stew Chicken</div><div class="az-desc">Rich, dark sauce built on caramelized sugar and island spices</div></div>
+    <div class="az-row"><div class="az-name">Jamaican Jerk Chicken</div><div class="az-desc">Allspice and scotch bonnet heat, charred skin, smoke if you have it</div></div>
+    <div class="az-row"><div class="az-name">Jamaican Rice &amp; Peas</div><div class="az-desc">Coconut milk and kidney beans cooked into fluffy rice — Sunday classic</div></div>
+
+    <div class="az-letter-head">K</div>
+    <div class="az-row"><div class="az-name">Korean Braised Short Ribs</div><div class="az-desc">Galbi-jjim — fall-off-the-bone ribs in a sweet soy and pear braise</div></div>
+    <div class="az-row"><div class="az-name">Korean Fried Chicken</div><div class="az-desc">Double-fried for a shatteringly crisp crust, finished with a sticky sweet-spicy glaze</div></div>
+    <div class="az-row"><div class="az-name">Korean Pork Bowl</div><div class="az-desc">Gochujang-marinated pork over rice with pickled cucumbers and sesame</div></div>
+    <div class="az-row"><div class="az-name">Kung Pao Chicken</div><div class="az-desc">Szechuan peppercorn heat, dried chilis, peanuts, and scallions</div></div>
+
+    <div class="az-letter-head">L</div>
+    <div class="az-row"><div class="az-name">LA Galbi (Korean BBQ Short Ribs)</div><div class="az-desc">Flanken-cut short ribs marinated in soy, sesame, and pear — charcoal grilled</div></div>
+    <div class="az-row"><div class="az-name">Lemongrass Beef Stir-Fry</div><div class="az-desc">Vietnamese-inspired quick wok meal with lemongrass, fish sauce, and fresh herbs</div></div>
+    <div class="az-row"><div class="az-name">Lemongrass Chicken</div><div class="az-desc">Aromatic citrusy marinade, grilled or pan-seared until caramelized</div></div>
+
+    <div class="az-letter-head">M</div>
+    <div class="az-row"><div class="az-name">Mac &amp; Cheese (Crew Mods)</div><div class="az-desc">Classic upgraded with gruyère, sharp cheddar, and a breadcrumb crust</div></div>
+    <div class="az-row"><div class="az-name">Mediterranean Yellow Rice</div><div class="az-desc">Turmeric and warm spices — fluffy, fragrant, pairs with everything</div></div>
+    <div class="az-row"><div class="az-name">Mexican Black Beans</div><div class="az-desc">Seasoned with cumin, garlic, and chipotle — the side that goes with everything</div></div>
+    <div class="az-row"><div class="az-name">Mexican Bowl</div><div class="az-desc">Build-your-own Chipotle-style at home with carnitas or barbacoa</div></div>
+    <div class="az-row"><div class="az-name">Moo Shu Chicken</div><div class="az-desc">Savoy cabbage, eggs, and chicken in hoisin-brushed flour tortilla wraps</div></div>
+
+    <div class="az-letter-head">N</div>
+    <div class="az-row"><div class="az-name">Nigerian Jollof Rice</div><div class="az-desc">Party rice — smoky tomato base, deeply seasoned, the one everyone asks about</div></div>
+    <div class="az-row"><div class="az-name">Nothing Bundt Cake (Classic Vanilla)</div><div class="az-desc">Copycat bundt with a moist vanilla crumb and signature cream cheese frosting drip</div></div>
+
+    <div class="az-letter-head">O</div>
+    <div class="az-row"><div class="az-name">Orange Chicken Sauce</div><div class="az-desc">Sticky, citrus-sweet glaze for tossing with fried chicken</div></div>
+
+    <div class="az-letter-head">P</div>
+    <div class="az-row"><div class="az-name">Pad Thai</div><div class="az-desc">Tamarind base, rice noodles, shrimp or chicken, peanuts and lime</div></div>
+    <div class="az-row"><div class="az-name">Pad Thai Sauce (Standalone)</div><div class="az-desc">The sauce recipe on its own — bottle it and use all week</div></div>
+    <div class="az-row"><div class="az-name">Panda Express Chow Mein</div><div class="az-desc">Copycat that's better than the original — celery cabbage, hoisin, and noodles</div></div>
+    <div class="az-row"><div class="az-name">Parmesan Vinaigrette</div><div class="az-desc">Sharp, creamy dressing with a bold parmesan bite</div></div>
+    <div class="az-row"><div class="az-name">Penne Vodka</div><div class="az-desc">Pink sauce, restaurant quality, done in 30 minutes</div></div>
+    <div class="az-row"><div class="az-name">Perfect Pot Roast</div><div class="az-desc">Dutch oven braise with carrots, potatoes, and a rich red wine sauce</div></div>
+    <div class="az-row"><div class="az-name">Pesto Chicken &amp; Broccoli</div><div class="az-desc">Bright, herby weeknight dinner — basil pesto tossed with chicken and charred broccoli</div></div>
+    <div class="az-row"><div class="az-name">Pork Chile Verde</div><div class="az-desc">Slow-stewed pork in roasted tomatillo and green chile heat</div></div>
+    <div class="az-row"><div class="az-name">Pumpkin Cinnamon Rolls</div><div class="az-desc">Spiced pumpkin dough with a maple cream cheese glaze</div></div>
+
+    <div class="az-letter-head">R</div>
+    <div class="az-row"><div class="az-name">Raspberry Muffins</div><div class="az-desc">Tart berry burst in a tender crumb with a crunchy sugar top</div></div>
+    <div class="az-row"><div class="az-name">Roasted Poblano Queso</div><div class="az-desc">Torchy's-inspired — charred green chiles, roasted tomatoes, verde sauce, and Boar's Head American</div></div>
+    <div class="az-row"><div class="az-name">Rotisserie Chicken Bowl</div><div class="az-desc">Fast assembly, big flavors built around a store-bought rotisserie bird</div></div>
+
+    <div class="az-letter-head">S</div>
+    <div class="az-row"><div class="az-name">Scotcheroos</div><div class="az-desc">Peanut butter crispy rice bars topped with chocolate and butterscotch</div></div>
+    <div class="az-row"><div class="az-name">Short Rib Ragù Pasta</div><div class="az-desc">Braised short rib slow-cooked into a rich, deep pasta sauce</div></div>
+    <div class="az-row"><div class="az-name">Shredded Beef Tacos</div><div class="az-desc">Slow-cooked beef, street-style served on warm corn tortillas</div></div>
+    <div class="az-row"><div class="az-name">Simple Alfredo Sauce</div><div class="az-desc">Butter, heavy cream, parmesan — nothing else, done in 10 minutes</div></div>
+    <div class="az-row"><div class="az-name">Sinner Cookies</div><div class="az-desc">Over-the-top chocolate cookies — not for the faint of heart</div></div>
+    <div class="az-row"><div class="az-name">Slow Cooker Barbacoa</div><div class="az-desc">Chipotle-style beef, set it all day, shred and pile into anything</div></div>
+    <div class="az-row"><div class="az-name">Smash Burger</div><div class="az-desc">Thin patty, crispy lacy edges, American cheese, special sauce</div></div>
+    <div class="az-row"><div class="az-name">Smoky Black Beans</div><div class="az-desc">Cumin, smoked paprika, and garlic — deeply savory side</div></div>
+    <div class="az-row"><div class="az-name">Soup Dumplings (Xiao Long Bao)</div><div class="az-desc">Pork and soup sealed inside a delicate pleated wrapper</div></div>
+    <div class="az-row"><div class="az-name">Sourdough English Muffins</div><div class="az-desc">Nooks and crannies, griddle-cooked from scratch — better than anything from a bag</div></div>
+    <div class="az-row"><div class="az-name">Sourdough Sticky Buns</div><div class="az-desc">Caramel pull-apart with a pecan and brown sugar top</div></div>
+    <div class="az-row"><div class="az-name">Spicy Vodka Pasta</div><div class="az-desc">Rigatoni in a spicy pink sauce with nduja and fresh basil</div></div>
+
+    <div class="az-letter-head">T</div>
+    <div class="az-row"><div class="az-name">Texas BBQ Sauce</div><div class="az-desc">Thick, smoky, tangy — no sweetness overload, built for brisket</div></div>
+    <div class="az-row"><div class="az-name">Texas Smoked Pulled Pork</div><div class="az-desc">Low-and-slow pork shoulder with a bark crust and smoke ring</div></div>
+    <div class="az-row"><div class="az-name">Tomatillo Ranch Dressing</div><div class="az-desc">Creamy, tangy verde-style ranch — the Chuy's copycat</div></div>
+    <div class="az-row"><div class="az-name">Turmeric Rice + Brazilian Beans + SW Salad</div><div class="az-desc">Full plate — golden yellow rice, seasoned black beans, and a fresh southwest salad</div></div>
+    <div class="az-row"><div class="az-name">Tuscan Chicken Pasta</div><div class="az-desc">Sun-dried tomato, heavy cream, wilted spinach, and parmesan</div></div>
+
+    <div class="az-letter-head">W</div>
+    <div class="az-row"><div class="az-name">White Chicken Chili</div><div class="az-desc">Creamy, mild, comforting white chili with cannellini beans and green chiles</div></div>
+    <div class="az-row"><div class="az-name">World Peace Cookies</div><div class="az-desc">Dorie Greenspan's famous chocolate sablés — buttery, crisp, deeply chocolatey</div></div>
+
+    <div class="az-letter-head">Z</div>
+    <div class="az-row"><div class="az-name">Zuppa Toscana</div><div class="az-desc">Sausage, kale, and potato soup in a creamy parmesan broth</div></div>
+
+  </div>
+
 </div>
 
 <footer>
