@@ -3221,7 +3221,7 @@ document.addEventListener('DOMContentLoaded',function(){
  </div>
 </div>
 
- <div class="filter-bar">
+ <div class="filter-bar" id="filter-bar-view">
  <button class="filter-btn active" onclick="filterCards('all', this)">All</button>
  <button class="filter-btn" onclick="filterCards('chicken', this)">Chicken & Meat</button>
  <button class="filter-btn" onclick="filterCards('pasta', this)">Pasta & Comfort</button>
@@ -3234,7 +3234,7 @@ document.addEventListener('DOMContentLoaded',function(){
  <button class="filter-btn" onclick="filterCards('mealprep', this)">Meal Prep</button>
  </div>
 
- <div class="recipe-list">
+ <div class="recipe-list" id="recipe-list-view">
  <div class="recipe-grid">
 
  <div class="recipe-card reveal" data-cat="chicken" onclick="showRecipe('shawarma')">
@@ -17813,11 +17813,49 @@ const ALL_RECIPES = [
  
 })();
 
+// Show/hide recipe pages
+function showRecipe(id) {
+ // Hide the list view
+ var listEl = document.getElementById('recipe-list-view');
+ var filterEl = document.getElementById('filter-bar-view');
+ if (listEl) listEl.style.display = 'none';
+ if (filterEl) filterEl.style.display = 'none';
+ // Hide all recipe pages
+ document.querySelectorAll('.recipe-page').forEach(function(p) {
+   p.classList.remove('active');
+   p.style.display = 'none';
+ });
+ // Show the target recipe
+ var target = document.getElementById('recipe-' + id);
+ if (target) {
+   target.style.display = 'block';
+   target.classList.add('active');
+   window.scrollTo(0, 0);
+   // Update URL hash without reloading
+   history.replaceState(null, '', '#' + id);
+ }
+}
+
+function showList() {
+ // Hide all recipe pages
+ document.querySelectorAll('.recipe-page').forEach(function(p) {
+   p.classList.remove('active');
+   p.style.display = 'none';
+ });
+ // Show the list view
+ var listEl = document.getElementById('recipe-list-view');
+ var filterEl = document.getElementById('filter-bar-view');
+ if (listEl) listEl.style.display = '';
+ if (filterEl) filterEl.style.display = '';
+ history.replaceState(null, '', window.location.pathname);
+ window.scrollTo(0, 0);
+}
+
 // Auto-open recipe from URL hash
 window.addEventListener('DOMContentLoaded', function() {
  const hash = window.location.hash.replace('#','');
  if (hash) {
- setTimeout(function() { showRecipe(hash); }, 100);
+   setTimeout(function() { showRecipe(hash); }, 100);
  }
 });
 </script>
