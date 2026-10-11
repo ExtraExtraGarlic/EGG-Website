@@ -663,10 +663,54 @@ footer {
 }
 
 @media (max-width: 600px) {
-  nav { padding: 0 20px; }
-  .cat-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .cat-card { padding: 24px 16px; }
-  .intro-stats { gap: 24px; }
+  /* Nav */
+  nav { padding: 0 16px; }
+  .nav-logo { font-size: 1rem; }
+
+  /* Slogan bar */
+  .hero-slogan-bar { padding: 20px 16px; }
+  .hero-slogan { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+
+  /* Hero — shorter on mobile */
+  .hero-image { min-height: 60vh; }
+
+  /* Intro */
+  .intro { padding: 56px 16px; gap: 32px; }
+  .intro-text h2 { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .intro-text p { font-size: 0.95rem; }
+  .intro-stats { gap: 24px; flex-wrap: wrap; }
+  .stat-num { font-size: 2.4rem; }
+
+  /* Featured section */
+  .featured { padding: 56px 16px; }
+  .section-header { margin-bottom: 32px; padding-bottom: 32px; }
+  .recipe-grid { gap: 12px; }
+  .recipe-card { padding: 20px; }
+  .recipe-card.large .recipe-card-title { font-size: 1.35rem; }
+
+  /* Categories */
+  .categories { padding: 56px 16px; }
+  .cat-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 32px; }
+  .cat-card { padding: 20px 14px; }
+  .cat-icon { font-size: 1.6rem; }
+  .cat-name { font-size: 1rem; }
+
+  /* Tabs section (homepage) */
+  .tabs-section { padding: 0 16px; }
+  .tabs-inner { padding: 40px 0 60px; }
+  .tab-link { padding: 12px 18px; font-size: 0.88rem; }
+
+  /* CTA */
+  .cta-section { padding: 64px 16px; }
+  .cta-section h2 { font-size: clamp(2rem, 10vw, 3.5rem); }
+
+  /* Footer */
+  footer { padding: 48px 16px 32px; }
+  .footer-inner { gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+  /* Mobile menu bigger links */
+  .mobile-menu a { font-size: 2rem; }
 }
 
 /* ─── ANIMATIONS ─── */
