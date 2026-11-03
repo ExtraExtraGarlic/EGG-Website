@@ -18068,5 +18068,151 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar
  </div>
 </div>
 
+
+<!-- BAKERY-STYLE FUDGE BROWNIES -->
+<div id="recipe-fudge-brownies" class="recipe-page">
+ <div class="rp-hero"><div class="rp-hero-bg"></div><div class="rp-hero-grate"></div><div class="rp-hero-overlay"></div><div class="rp-hero-emoji"></div><div class="rp-photo-note">// photo by a rat, recipe by the crew</div></div>
+ <button class="back-btn" onclick="showList()">← Back to Recipes</button>
+ <div class="rp-header">
+ <div>
+ <div class="rp-eyebrow"> Crew Tested · Desserts & Baking</div>
+ <h1 class="rp-title">BAKERY-STYLE<br>FUDGE<br>BROWNIES</h1>
+ <p class="rp-voice">Not cakey. Not dry. Not box mix. <strong>1½ cups of cocoa, cold eggs stirred in vigorously, and two cups of chocolate chips folded in.</strong> Bake low and slow at 325°F — toothpick comes out slightly moist, not clean. Let them cool before you cut or you'll regret it.</p>
+ <div class="rp-meta"><div class="rp-meta-item">⏱ <strong>Prep: 15 min</strong></div><div class="rp-meta-item"> <strong>Bake: 45–50 min at 325°F</strong></div><div class="rp-meta-item"> <strong>Pan: 9×9 inch</strong></div></div>
+ </div>
+ <div class="rp-stats">
+ <div class="rp-stats-head"> Quick Stats</div>
+ <div class="rp-stats-body">
+ <div class="rp-stat-row"><span class="rp-stat-label">method</span><span class="rp-stat-val">Stovetop + Oven</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">temp</span><span class="rp-stat-val">325°F</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">bake time</span><span class="rp-stat-val">45–50 min</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">pan</span><span class="rp-stat-val">9×9 inch</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">crew rating</span><span class="rp-stat-val green">9.6 / 10</span></div>
+ </div>
+ </div>
+ </div>
+ <div class="rp-body">
+ <div>
+ <h2 class="rp-sec-title">Ingredients</h2>
+ <div class="ing-copy-bar">
+ <span class="ing-copy-label">Ingredients</span>
+ <div style="display:flex;gap:8px;align-items:center;">
+ <button class="ing-uncheck-btn" onclick="uncheckAll('fudge-brownies')">Clear All</button>
+ <button class="ing-copy-btn" id="copy-btn-fudge-brownies" onclick="copyIngredients('fudge-brownies')"> Copy List</button>
+ </div>
+ </div>
+ <div class="ing-group">
+ <div class="ing-group-head">Wet</div>
+ <div class="ing-check-row" data-name="Unsalted butter melted — 2.5 sticks" data-amt="1¼ cups" data-recipe="fudge-brownies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Unsalted butter <span>melted — 2.5 sticks</span></div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1¼ cups</div>
+ </div>
+ <div class="ing-check-row" data-name="Vanilla extract" data-amt="1 tsp" data-recipe="fudge-brownies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Vanilla extract</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 tsp</div>
+ </div>
+ <div class="ing-check-row" data-name="Cold large eggs" data-amt="4" data-recipe="fudge-brownies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Cold large eggs <span>cold from the fridge — adds structure</span></div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">4</div>
+ </div>
+ </div>
+ <div class="ing-group">
+ <div class="ing-group-head">Dry</div>
+ <div class="ing-check-row" data-name="Granulated sugar" data-amt="2 cups" data-recipe="fudge-brownies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Granulated sugar</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">2 cups</div>
+ </div>
+ <div class="ing-check-row" data-name="Brown sugar" data-amt="½ cup" data-recipe="fudge-brownies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Brown sugar</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">½ cup</div>
+ </div>
+ <div class="ing-check-row" data-name="Unsweetened natural cocoa powder" data-amt="1½ cups" data-recipe="fudge-brownies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Unsweetened natural cocoa powder</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1½ cups</div>
+ </div>
+ <div class="ing-check-row" data-name="Salt" data-amt="½ tsp" data-recipe="fudge-brownies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Salt</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">½ tsp</div>
+ </div>
+ <div class="ing-check-row" data-name="All-purpose flour" data-amt="1 cup" data-recipe="fudge-brownies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">All-purpose flour</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 cup</div>
+ </div>
+ <div class="ing-check-row" data-name="Semi-sweet chocolate chips" data-amt="2 cups" data-recipe="fudge-brownies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Semi-sweet chocolate chips</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">2 cups</div>
+ </div>
+ </div>
+ <div class="steps-wrap">
+ <h2 class="rp-sec-title">How We Make It</h2>
+ <div class="step reveal"><div class="step-num">1</div><div><div class="step-title">Preheat and prep the pan</div><p class="step-text">Preheat oven to 325°F. Line a 9×9-inch baking pan with parchment paper, letting it hang over two sides so you can lift the brownies out cleanly. Set aside.</p></div></div>
+ <div class="step reveal"><div class="step-num">2</div><div><div class="step-title">Melt butter and combine with sugars and cocoa</div><p class="step-text">Melt butter in a microwave-safe bowl using 30-second intervals, stirring between each. Once melted, add both sugars, the cocoa powder, and salt. Stir until fully combined — the mixture will be thick and grainy, that's correct.</p><div class="step-tip">// The sugar doesn't fully dissolve here. That's what creates that classic shiny, crackly brownie top.</div></div></div>
+ <div class="step reveal"><div class="step-num">3</div><div><div class="step-title">Add vanilla and eggs</div><p class="step-text">Stir in the vanilla. Add the cold eggs and stir vigorously for 60–90 seconds. The mixture should turn glossy and slightly thickened. Cold eggs help keep the brownies dense and fudgy rather than cakey.</p><div class="step-tip">// Don't skip the vigorous stirring — it builds structure and creates that shiny top crust.</div></div></div>
+ <div class="step reveal"><div class="step-num">4</div><div><div class="step-title">Add flour and chocolate chips</div><p class="step-text">Add the flour and stir until no dry streaks remain — don't overmix. Fold in the chocolate chips. Pour the batter into the prepared pan and spread evenly.</p></div></div>
+ <div class="step reveal"><div class="step-num">5</div><div><div class="step-title">Bake 45–50 minutes at 325°F</div><p class="step-text">Bake at 325°F for 45–50 minutes. The edges should be set and pulling away slightly from the pan. A toothpick inserted in the center should come out with just a few moist crumbs — not wet batter, but not clean either. If it comes out clean, they're overbaked.</p><div class="step-tip">// Low and slow is the whole point. 325°F keeps the center fudgy. Rushing at higher heat dries them out.</div></div></div>
+ <div class="step reveal"><div class="step-num">6</div><div><div class="step-title">Cool, cut, and serve warm</div><p class="step-text">Let cool in the pan for at least 20–30 minutes before cutting. Use the parchment overhang to lift out, then slice into squares. Serve warm — the chips stay melty and the center is dense and fudgy. Good luck eating just one.</p></div></div>
+ </div>
+ </div>
+ <div class="rp-sidebar">
+ <div class="sc"><div class="sc-head">Quick Info</div><div class="sc-body"><div class="sc-row"><span class="sc-label">oven temp</span><span class="sc-val">325°F</span></div><div class="sc-row"><span class="sc-label">bake time</span><span class="sc-val">45–50 min</span></div><div class="sc-row"><span class="sc-label">pan size</span><span class="sc-val">9×9 inch</span></div><div class="sc-row"><span class="sc-label">toothpick</span><span class="sc-val">slightly moist</span></div></div></div>
+ <div class="sc"><div class="sc-head">Crew Notes</div><div class="sc-body"><p class="sc-note">Use cold eggs straight from the fridge — it matters. Natural cocoa, not Dutch-process. Don't pull until the toothpick comes out with moist crumbs, not clean. Let them cool before cutting or the center will fall apart.</p></div></div>
+ <div class="sc"><div class="sc-head">Tags</div><div class="sc-body"><div class="tag-list"><span class="tag">Brownies</span><span class="tag">Baking</span><span class="tag">Chocolate</span><span class="tag">Fudgy</span><span class="tag">Bakery Style</span><span class="tag">Crew Fave</span></div></div></div>
+ </div>
+ </div>
+
+ <div class="rp-tabs" style="max-width:1100px;margin:40px auto 0;padding:0 56px;">
+ <button class="rp-tab active" onclick="switchTab(this,'tab-subs-fudge-brownies','tab-equip-fudge-brownies','tab-lo-fudge-brownies','tab-pairs-fudge-brownies')">Substitutions</button>
+ <button class="rp-tab" onclick="switchTab(this,'tab-equip-fudge-brownies','tab-subs-fudge-brownies','tab-lo-fudge-brownies','tab-pairs-fudge-brownies')">Equipment</button>
+ <button class="rp-tab" onclick="switchTab(this,'tab-lo-fudge-brownies','tab-subs-fudge-brownies','tab-equip-fudge-brownies','tab-pairs-fudge-brownies')">Leftovers & Storage</button>
+ <button class="rp-tab" onclick="switchTab(this,'tab-pairs-fudge-brownies','tab-subs-fudge-brownies','tab-equip-fudge-brownies','tab-lo-fudge-brownies')">Pairs Well With</button>
+ </div>
+ <div style="max-width:1100px;margin:0 auto;padding:0 56px 60px;">
+ <div id="tab-subs-fudge-brownies" class="rp-tab-panel active">
+ <div class="sub-row"><div class="sub-original">Natural cocoa powder</div><div class="sub-arrow">→</div><div class="sub-options">Dutch-process works but changes the flavor — natural is recommended</div></div>
+ <div class="sub-row"><div class="sub-original">Unsalted butter</div><div class="sub-arrow">→</div><div class="sub-options">Salted butter — omit the added salt</div></div>
+ <div class="sub-row"><div class="sub-original">Semi-sweet chocolate chips</div><div class="sub-arrow">→</div><div class="sub-options">Dark chocolate chunks or chopped chocolate bar</div></div>
+ <div class="sub-row"><div class="sub-original">Brown sugar</div><div class="sub-arrow">→</div><div class="sub-options">All granulated sugar — less chew, slightly less depth</div></div>
+ </div>
+ <div id="tab-equip-fudge-brownies" class="rp-tab-panel">
+ <div class="equip-list">
+ <div class="equip-item"><div class="equip-icon"></div><div><div class="equip-name">9×9-inch baking pan<span class="equip-required">required</span></div><div class="equip-note">Don't use 9×13 — brownies will be too thin</div></div></div>
+ <div class="equip-item"><div class="equip-icon"></div><div><div class="equip-name">Parchment paper<span class="equip-required">required</span></div><div class="equip-note">Overhang on two sides for easy removal</div></div></div>
+ <div class="equip-item"><div class="equip-icon"></div><div><div class="equip-name">Microwave-safe mixing bowl</div><div class="equip-note">Large enough to fit all ingredients</div></div></div>
+ <div class="equip-item"><div class="equip-icon"></div><div><div class="equip-name">Toothpick or cake tester</div><div class="equip-note">Slightly moist = done; clean = overbaked</div></div></div>
+ </div>
+ </div>
+ <div id="tab-lo-fudge-brownies" class="rp-tab-panel">
+ <div class="lo-panel-grid">
+ <div class="lo-panel-card">
+ <div class="lo-panel-label">Room Temp</div>
+ <div class="lo-panel-val" style="color:#F5F2ED;">3–4 days</div>
+ <div class="lo-panel-note">Airtight container. Gets fudgier on day 2.</div>
+ </div>
+ <div class="lo-panel-card">
+ <div class="lo-panel-label" style="color:#2E6B2E;">Freezer</div>
+ <div class="lo-panel-val" style="color:#2E6B2E;">3 months</div>
+ <div class="lo-panel-note" style="color:#2E6B2E;">Wrap individually, thaw at room temp</div>
+ </div>
+ <div class="lo-panel-card" style="grid-column:1/-1;">
+ <div class="lo-panel-label">Reheat</div>
+ <div class="lo-panel-note">Microwave 15–20 seconds. Chips melt back, center goes gooey again. Top with a scoop of vanilla ice cream and you've got dessert.</div>
+ </div>
+ </div>
+ </div>
+ <div id="tab-pairs-fudge-brownies" class="rp-tab-panel">
+ <div style="margin-bottom:20px;"><div style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#B01818;font-family:'Oswald',sans-serif;margin-bottom:12px;">Similar Recipes</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><button onclick="showRecipe('toffee-chocolate-chip-cookies')" style="padding:7px 14px;border:1.5px solid rgba(245,242,237,0.08);background:var(--concrete);font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;color:rgba(245,242,237,0.6);cursor:pointer;border-radius:2px;transition:all 0.15s;" onmouseover="this.style.borderColor='#B01818';this.style.color='#B01818'" onmouseout="this.style.borderColor='rgba(245,242,237,0.08)';this.style.color='rgba(245,242,237,0.6)'">Chocolate Chip Toffee Cookie</button><button onclick="showRecipe('world-peace-cookies')" style="padding:7px 14px;border:1.5px solid rgba(245,242,237,0.08);background:var(--concrete);font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;color:rgba(245,242,237,0.6);cursor:pointer;border-radius:2px;transition:all 0.15s;" onmouseover="this.style.borderColor='#B01818';this.style.color='#B01818'" onmouseout="this.style.borderColor='rgba(245,242,237,0.08)';this.style.color='rgba(245,242,237,0.6)'">World Peace Cookies</button></div></div>
+ </div>
+ </div>
+</div>
+
 </body>
 </html>
