@@ -17897,5 +17897,176 @@ window.addEventListener('DOMContentLoaded', function() {
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('overlay').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open');}
 function closeSidebar(){document.getElementById('sidebar').classList.remove('open');document.getElementById('overlay').classList.remove('open');document.getElementById('hamburger').classList.remove('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar();});
-</script></body>
+</script>
+
+<!-- TOFFEE & CHOCOLATE CHIP COOKIES -->
+<div id="recipe-toffee-chocolate-chip-cookies" class="recipe-page">
+ <div class="rp-hero"><div class="rp-hero-bg"></div><div class="rp-hero-grate"></div><div class="rp-hero-overlay"></div><div class="rp-hero-emoji"></div><div class="rp-photo-note">// photo by a rat, recipe by the crew</div></div>
+ <button class="back-btn" onclick="showList()">← Back to Recipes</button>
+ <div class="rp-header">
+ <div>
+ <div class="rp-eyebrow"> Crew Tested · Desserts & Baking</div>
+ <h1 class="rp-title">CHOCOLATE<br>CHIP TOFFEE<br>COOKIE</h1>
+ <p class="rp-voice">Browned butter brings the depth. Toffee brings the crunch. Coffee brings the <em>why does this taste so good.</em> Chill the dough overnight, keep the toffee pieces buried inside the balls, and don't pull them early — <strong>edges set, centers still soft, Maldon on top.</strong> These hit different.</p>
+ <div class="rp-meta"><div class="rp-meta-item">⏱ <strong>Prep: 20 min + 12–24 hr chill</strong></div><div class="rp-meta-item"> <strong>Bake: 16–20 min at 375°F</strong></div><div class="rp-meta-item"> <strong>Yields: 14–16 cookies</strong></div></div>
+ </div>
+ <div class="rp-stats">
+ <div class="rp-stats-head"> Quick Stats</div>
+ <div class="rp-stats-body">
+ <div class="rp-stat-row"><span class="rp-stat-label">method</span><span class="rp-stat-val">Stovetop + Oven</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">temp</span><span class="rp-stat-val">375°F</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">bake time</span><span class="rp-stat-val">16–20 min</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">yield</span><span class="rp-stat-val">14–16 cookies</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">chill time</span><span class="rp-stat-val">12–24 hours</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">crew rating</span><span class="rp-stat-val green">9.4 / 10</span></div>
+ </div>
+ </div>
+ </div>
+ <div class="rp-body">
+ <div>
+ <h2 class="rp-sec-title">Ingredients</h2>
+ <div class="ing-copy-bar">
+ <span class="ing-copy-label">Ingredients</span>
+ <div style="display:flex;gap:8px;align-items:center;">
+ <button class="ing-uncheck-btn" onclick="uncheckAll('toffee-chocolate-chip-cookies')">Clear All</button>
+ <button class="ing-copy-btn" id="copy-btn-toffee-chocolate-chip-cookies" onclick="copyIngredients('toffee-chocolate-chip-cookies')"> Copy List</button>
+ </div>
+ </div>
+ <div class="ing-group">
+ <div class="ing-group-head">Wet</div>
+ <div class="ing-check-row" data-name="Butter for browning — start with a little more than 1 cup" data-amt="1 cup browned" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Butter <span>for browning — start with a little more than 1 cup</span></div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 cup browned</div>
+ </div>
+ <div class="ing-check-row" data-name="Hot brewed coffee or water" data-amt="3 Tbsp" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Hot brewed coffee <span>or water — replaces moisture lost from browning</span></div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">3 Tbsp</div>
+ </div>
+ <div class="ing-check-row" data-name="Eggs" data-amt="2" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Eggs</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">2</div>
+ </div>
+ <div class="ing-check-row" data-name="Vanilla extract" data-amt="1 tsp" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Vanilla extract</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 tsp</div>
+ </div>
+ </div>
+ <div class="ing-group">
+ <div class="ing-group-head">Sugars</div>
+ <div class="ing-check-row" data-name="Brown sugar" data-amt="1 cup" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Brown sugar</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 cup</div>
+ </div>
+ <div class="ing-check-row" data-name="White sugar" data-amt="½ cup" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">White sugar</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">½ cup</div>
+ </div>
+ </div>
+ <div class="ing-group">
+ <div class="ing-group-head">Dry</div>
+ <div class="ing-check-row" data-name="All-purpose flour or Italian flour" data-amt="3 cups" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">All-purpose flour <span>or Italian 00 flour — fluff, spoon, level; don't pack</span></div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">3 cups</div>
+ </div>
+ <div class="ing-check-row" data-name="Baking soda NOT baking powder" data-amt="1 tsp" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Baking soda <span>NOT baking powder</span></div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 tsp</div>
+ </div>
+ <div class="ing-check-row" data-name="Salt" data-amt="1 tsp" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Salt</div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 tsp</div>
+ </div>
+ </div>
+ <div class="ing-group">
+ <div class="ing-group-head">Mix-Ins</div>
+ <div class="ing-check-row" data-name="Chocolate chips dark or semi-sweet" data-amt="10 oz" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Chocolate chips <span>dark or semi-sweet — or a mix of chips and chunks</span></div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">10 oz</div>
+ </div>
+ <div class="ing-check-row" data-name="Toffee pieces homemade or store-bought" data-amt="1 cup" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Toffee pieces <span>homemade or store-bought — break into smaller pieces, keep inside dough balls</span></div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 cup</div>
+ </div>
+ <div class="ing-check-row" data-name="Maldon sea salt flakes for finishing" data-amt="to finish" data-recipe="toffee-chocolate-chip-cookies" onclick="toggleCheck(this)">
+ <input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)">
+ <div class="ing-name">Maldon sea salt flakes <span>for finishing</span></div>
+ <div class="ing-amt" style="margin-left:auto;white-space:nowrap;">to finish</div>
+ </div>
+ </div>
+ <div class="steps-wrap">
+ <h2 class="rp-sec-title">How We Make It</h2>
+ <div class="step reveal"><div class="step-num">1</div><div><div class="step-title">Brown the butter</div><p class="step-text">Place slightly more than 1 cup of butter in a saucepan over medium heat. Stir every 30 seconds as it melts and begins to foam. Keep cooking until it turns a rich golden brown and smells nutty, about 5–6 minutes. Pull from heat immediately, pour into a mixing bowl, and cool for 30 minutes. You need exactly 1 cup of finished browned butter.</p><div class="step-tip">// Don't walk away — it goes from golden to burnt fast. The moment it smells nutty and looks amber, it's done.</div></div></div>
+ <div class="step reveal"><div class="step-num">2</div><div><div class="step-title">Mix in the sugars</div><p class="step-text">Once the butter has cooled 30 minutes, add both sugars. Mix until combined.</p></div></div>
+ <div class="step reveal"><div class="step-num">3</div><div><div class="step-title">Add wet ingredients</div><p class="step-text">Add the hot coffee (or water), eggs, and vanilla extract. Whisk until smooth and fully combined. The hot coffee replaces the moisture that burned off during browning and adds a subtle depth of flavor.</p><div class="step-tip">// No coffee on hand? Hot water works. Want more depth? Mix espresso powder into hot water.</div></div></div>
+ <div class="step reveal"><div class="step-num">4</div><div><div class="step-title">Add dry ingredients and mix-ins</div><p class="step-text">Add the flour, baking soda, and salt. Mix until just incorporated — do not overmix. Fold in the chocolate chips and toffee pieces. Break toffee into smaller chunks if needed; large pieces tend to spread and cause flat cookies.</p><div class="step-tip">// Puffy cookies = too much flour. Fluff your flour first, spoon it into the cup, and level without packing.</div></div></div>
+ <div class="step reveal"><div class="step-num">5</div><div><div class="step-title">Scoop and refrigerate</div><p class="step-text">Scoop dough into ¼–⅓ cup portions (about 120g each). Make sure toffee pieces are tucked inside each ball, not on the outside — exposed toffee spreads and flattens the cookie. Place in a covered container and refrigerate 12–24 hours. You can also freeze the scooped balls and bake straight from frozen, adding a few extra minutes.</p></div></div>
+ <div class="step reveal"><div class="step-num">6</div><div><div class="step-title">Bake at 375°F for 16–20 minutes</div><p class="step-text">Preheat oven to 375°F. Place dough balls a few inches apart on a baking sheet. Bake 16–20 minutes, until edges are set and centers remain slightly soft. They will firm up as they cool — don't overbake chasing a done center.</p></div></div>
+ <div class="step reveal"><div class="step-num">7</div><div><div class="step-title">Finish and cool</div><p class="step-text">Pull from the oven and immediately hit the tops with Maldon sea salt flakes. Let cool on the pan for 5–10 minutes before moving — they're fragile when hot.</p></div></div>
+ </div>
+ </div>
+ <div class="rp-sidebar">
+ <div class="sc"><div class="sc-head">Quick Info</div><div class="sc-body"><div class="sc-row"><span class="sc-label">oven temp</span><span class="sc-val">375°F</span></div><div class="sc-row"><span class="sc-label">bake time</span><span class="sc-val">16–20 min</span></div><div class="sc-row"><span class="sc-label">chill time</span><span class="sc-val">12–24 hrs</span></div><div class="sc-row"><span class="sc-label">dough ball</span><span class="sc-val">~120g / ¼–⅓ cup</span></div><div class="sc-row"><span class="sc-label">yield</span><span class="sc-val">14–16 cookies</span></div></div></div>
+ <div class="sc"><div class="sc-head">Crew Notes</div><div class="sc-body"><p class="sc-note">Don't skip the chill. It's not optional — 24 hours is better than 12. The browned butter + toffee + coffee combo is the whole point; don't swap them out. Keep toffee inside the dough balls or it'll spread the cookie flat. Maldon on top, always.</p></div></div>
+ <div class="sc"><div class="sc-head">Tags</div><div class="sc-body"><div class="tag-list"><span class="tag">Cookies</span><span class="tag">Baking</span><span class="tag">Browned Butter</span><span class="tag">Toffee</span><span class="tag">Chocolate</span><span class="tag">Crew Fave</span></div></div></div>
+ </div>
+ </div>
+
+ <div class="rp-tabs" style="max-width:1100px;margin:40px auto 0;padding:0 56px;">
+ <button class="rp-tab active" onclick="switchTab(this,'tab-subs-toffee-choc','tab-equip-toffee-choc','tab-lo-toffee-choc','tab-pairs-toffee-choc')">Substitutions</button>
+ <button class="rp-tab" onclick="switchTab(this,'tab-equip-toffee-choc','tab-subs-toffee-choc','tab-lo-toffee-choc','tab-pairs-toffee-choc')">Equipment</button>
+ <button class="rp-tab" onclick="switchTab(this,'tab-lo-toffee-choc','tab-subs-toffee-choc','tab-equip-toffee-choc','tab-pairs-toffee-choc')">Leftovers & Storage</button>
+ <button class="rp-tab" onclick="switchTab(this,'tab-pairs-toffee-choc','tab-subs-toffee-choc','tab-equip-toffee-choc','tab-lo-toffee-choc')">Pairs Well With</button>
+ </div>
+ <div style="max-width:1100px;margin:0 auto;padding:0 56px 60px;">
+ <div id="tab-subs-toffee-choc" class="rp-tab-panel active">
+ <div class="sub-row"><div class="sub-original">Hot brewed coffee</div><div class="sub-arrow">→</div><div class="sub-options">Hot water, or espresso powder dissolved in hot water</div></div>
+ <div class="sub-row"><div class="sub-original">Italian 00 flour</div><div class="sub-arrow">→</div><div class="sub-options">All-purpose flour — just don't pack it</div></div>
+ <div class="sub-row"><div class="sub-original">Dark chocolate chips</div><div class="sub-arrow">→</div><div class="sub-options">Semi-sweet, milk chocolate, or a mix of all three</div></div>
+ <div class="sub-row"><div class="sub-original">Store-bought toffee</div><div class="sub-arrow">→</div><div class="sub-options">Heath bar bits work — homemade is better</div></div>
+ <div class="sub-row"><div class="sub-original">Maldon finishing salt</div><div class="sub-arrow">→</div><div class="sub-options">Any flaky sea salt — regular salt won't hit the same</div></div>
+ </div>
+ <div id="tab-equip-toffee-choc" class="rp-tab-panel">
+ <div class="equip-list">
+ <div class="equip-item"><div class="equip-icon"></div><div><div class="equip-name">Light-colored saucepan<span class="equip-required">required</span></div><div class="equip-note">So you can see the butter browning — dark pans hide the color</div></div></div>
+ <div class="equip-item"><div class="equip-icon"></div><div><div class="equip-name">Cookie scoop (size 16)<span class="equip-required">recommended</span></div><div class="equip-note">About ¼ cup — keeps cookies consistent</div></div></div>
+ <div class="equip-item"><div class="equip-icon"></div><div><div class="equip-name">Kitchen scale<span class="equip-required">recommended</span></div><div class="equip-note">Target ~120g per dough ball</div></div></div>
+ <div class="equip-item"><div class="equip-icon"></div><div><div class="equip-name">Baking sheet + parchment</div><div class="equip-note">Parchment keeps the toffee from sticking</div></div></div>
+ </div>
+ </div>
+ <div id="tab-lo-toffee-choc" class="rp-tab-panel">
+ <div class="lo-panel-grid">
+ <div class="lo-panel-card">
+ <div class="lo-panel-label">Room Temp</div>
+ <div class="lo-panel-val" style="color:#F5F2ED;">3–4 days</div>
+ <div class="lo-panel-note">Airtight container. Gets better day 2.</div>
+ </div>
+ <div class="lo-panel-card">
+ <div class="lo-panel-label" style="color:#2E6B2E;">Freezer (dough)</div>
+ <div class="lo-panel-val" style="color:#2E6B2E;">3 months</div>
+ <div class="lo-panel-note" style="color:#2E6B2E;">Freeze scooped balls, bake from frozen + a few extra minutes</div>
+ </div>
+ <div class="lo-panel-card" style="grid-column:1/-1;">
+ <div class="lo-panel-label">Freeze Note</div>
+ <div class="lo-panel-note">Freeze raw dough balls in a single layer, then transfer to a bag. Bake straight from frozen at 375°F — add 3–5 minutes to the bake time. Fresh-baked cookies on demand.</div>
+ </div>
+ </div>
+ </div>
+ <div id="tab-pairs-toffee-choc" class="rp-tab-panel">
+ <div style="margin-bottom:20px;"><div style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#B01818;font-family:'Oswald',sans-serif;margin-bottom:12px;">Similar Recipes</div><div style="display:flex;flex-wrap:wrap;gap:8px;"><button onclick="showRecipe('browned-butter-cookies')" style="padding:7px 14px;border:1.5px solid rgba(245,242,237,0.08);background:var(--concrete);font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;color:rgba(245,242,237,0.6);cursor:pointer;border-radius:2px;transition:all 0.15s;" onmouseover="this.style.borderColor='#B01818';this.style.color='#B01818'" onmouseout="this.style.borderColor='rgba(245,242,237,0.08)';this.style.color='rgba(245,242,237,0.6)'">Browned Butter Cookies</button><button onclick="showRecipe('world-peace-cookies')" style="padding:7px 14px;border:1.5px solid rgba(245,242,237,0.08);background:var(--concrete);font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;color:rgba(245,242,237,0.6);cursor:pointer;border-radius:2px;transition:all 0.15s;" onmouseover="this.style.borderColor='#B01818';this.style.color='#B01818'" onmouseout="this.style.borderColor='rgba(245,242,237,0.08)';this.style.color='rgba(245,242,237,0.6)'">World Peace Cookies</button><button onclick="showRecipe('biscoff-cookies')" style="padding:7px 14px;border:1.5px solid rgba(245,242,237,0.08);background:var(--concrete);font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;color:rgba(245,242,237,0.6);cursor:pointer;border-radius:2px;transition:all 0.15s;" onmouseover="this.style.borderColor='#B01818';this.style.color='#B01818'" onmouseout="this.style.borderColor='rgba(245,242,237,0.08)';this.style.color='rgba(245,242,237,0.6)'">Biscoff Cookies</button></div></div>
+ </div>
+ </div>
+</div>
+
+</body>
 </html>
