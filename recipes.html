@@ -424,14 +424,14 @@ footer {
 
 <div class="page-header">
   <h1>The<br><em>Recipe</em><br>Vault</h1>
-  <div class="header-count" id="recipeCount">92 Recipes</div>
+  <div class="header-count" id="recipeCount">101 Recipes</div>
 </div>
 
 <!-- STICKY TABS -->
 <div class="tab-bar">
   <button class="tab-btn active" onclick="showTab('all')">All</button>
   <button class="tab-btn" onclick="showTab('full_meals')">Full Meals · 58</button>
-  <button class="tab-btn" onclick="showTab('sides')">Sides &amp; Sauces · 22</button>
+  <button class="tab-btn" onclick="showTab('sides')">Sides &amp; Sauces · 23</button>
   <button class="tab-btn" onclick="showTab('pizza')">Pizza · 1</button>
   <button class="tab-btn" onclick="showTab('desserts')">Desserts &amp; Baking · 19</button>
   <button class="tab-btn" onclick="showTab('az')">A–Z Index</button>
@@ -814,7 +814,7 @@ footer {
       <span class="rr-meta">Slow Cooker · Chicken · Sandwich</span>
       <span class="rr-arrow">→</span>
     </div>
-    <div class="section-label">Sides &amp; Sauces <span>22 recipes · A–Z</span></div>
+    <div class="section-label">Sides &amp; Sauces <span>23 recipes · A–Z</span></div>
     <div class="recipe-row" data-cat="sides" data-slug="authentic-mexican-rice" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">Authentic Mexican Rice</span>
@@ -945,6 +945,12 @@ footer {
       <span class="rr-num">22</span>
       <span class="rr-name">Salsa de Rábano</span>
       <span class="rr-meta">Salsa · Mexican · Radish</span>
+      <span class="rr-arrow">→</span>
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="italian-herb-sourdough-rolls" onclick="toggleExpand(this)">
+      <span class="rr-num">23</span>
+      <span class="rr-name">Italian Herb Sourdough Sub Rolls</span>
+      <span class="rr-meta">Bread · Sourdough · Cheesy</span>
       <span class="rr-arrow">→</span>
     </div>
     <div class="section-label">Pizza <span>1 recipe</span></div>
@@ -1426,7 +1432,7 @@ footer {
 
   <!-- SIDES -->
   <div class="recipe-section" id="section-sides">
-    <div class="section-label">Sides &amp; Sauces <span>22 recipes · A–Z</span></div>
+    <div class="section-label">Sides &amp; Sauces <span>23 recipes · A–Z</span></div>
     <div class="recipe-row" data-cat="sides" data-slug="authentic-mexican-rice" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">Authentic Mexican Rice</span>
@@ -1557,6 +1563,12 @@ footer {
       <span class="rr-num">22</span>
       <span class="rr-name">Salsa de Rábano</span>
       <span class="rr-meta">Salsa · Mexican · Radish</span>
+      <span class="rr-arrow">→</span>
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="italian-herb-sourdough-rolls" onclick="toggleExpand(this)">
+      <span class="rr-num">23</span>
+      <span class="rr-name">Italian Herb Sourdough Sub Rolls</span>
+      <span class="rr-meta">Bread · Sourdough · Cheesy</span>
       <span class="rr-arrow">→</span>
     </div>
   </div>
@@ -1754,6 +1766,9 @@ footer {
     <div class="az-row"><div class="az-name">Homemade Pita Bread</div><div class="az-desc">Pockets that puff up hot off the pan — ready in under an hour</div></div>
     <div class="az-row"><div class="az-name">Homemade Ranch</div><div class="az-desc">From-scratch buttermilk ranch with fresh dill, chives, and garlic</div></div>
 
+    <div class="az-letter-head">I</div>
+    <div class="az-row" onclick="window.location='DRC_recipes_v13.html#italian-herb-sourdough-rolls'"><div class="az-name">Italian Herb Sourdough Sub Rolls</div><div class="az-desc">Milk-enriched sourdough sub rolls with garlic and onion powder in the dough, topped with Italian herbs and a three-cheese blend</div></div>
+
     <div class="az-letter-head">J</div>
     <div class="az-row"><div class="az-name">Jamaican Brown Stew Chicken</div><div class="az-desc">Rich, dark sauce built on caramelized sugar and island spices</div></div>
     <div class="az-row"><div class="az-name">Jamaican Jerk Chicken</div><div class="az-desc">Allspice and scotch bonnet heat, charred skin, smoke if you have it</div></div>
@@ -1855,7 +1870,8 @@ const LIVE_SLUGS = new Set([
   'pad-thai-sauce','pork-adobo','pork-chile-verde','pumpkin-cinnamon-rolls',
   'raspberry-muffins','salsa-de-rabano','scotcheroos','shepherds-pie','short-rib-lasagna',
   'short-rib-ragu','shredded-beef-tacos','sourdough-cinnamon-roll-focaccia',
-  'sourdough-english-muffins','sourdough-sticky-buns','spicy-vodka-pasta','texas-pulled-pork',
+  'italian-herb-sourdough-rolls','sourdough-english-muffins','sourdough-sticky-buns',
+  'spicy-vodka-pasta','texas-pulled-pork',
   'toffee-chocolate-chip-cookies','torchys-queso','turmeric-rice-combo','tuscan-chicken-pasta',
   'white-chicken-chili','world-peace-cookies'
 ]);
