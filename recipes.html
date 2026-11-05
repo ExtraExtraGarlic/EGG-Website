@@ -306,6 +306,49 @@ nav {
   text-align: center; display: none;
 }
 
+/* EXPAND PANEL */
+.expand-panel {
+  display: none;
+  background: rgba(30,20,8,0.04);
+  border-bottom: 1px solid rgba(30,20,8,0.07);
+  padding: 0;
+  overflow: hidden;
+}
+.expand-panel.open {
+  display: block;
+  animation: panelIn 0.18s ease;
+}
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.expand-inner {
+  padding: 20px 48px 24px;
+  max-width: 760px;
+}
+.expand-coming {
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 16px 0 8px;
+}
+.expand-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--garlic); text-decoration: none;
+  border-bottom: 1.5px solid var(--garlic);
+  padding-bottom: 2px;
+  transition: opacity 0.15s;
+}
+.expand-link:hover { opacity: 0.7; }
+
+/* row open state */
+.recipe-row.expanded .rr-arrow { transform: rotate(90deg); color: var(--garlic); }
+.recipe-row.expanded .rr-name { color: var(--garlic); }
+
 /* FOOTER */
 footer {
   background: var(--brown);
@@ -363,6 +406,9 @@ footer {
 
   /* Footer */
   footer { padding: 32px 16px; }
+
+  /* Expand panel */
+  .expand-inner { padding: 16px 16px 20px; }
 }
 </style>
 </head>
@@ -420,1229 +466,1229 @@ footer {
   <!-- ALL -->
   <div class="recipe-section active" id="section-all">
     <div class="section-label">Full Meals <span>58 recipes · A–Z</span></div>
-    <a href="DRC_recipes_v13.html#bbq-grilled-chicken" class="recipe-row" data-cat="full_meals">
+    <div class="recipe-row" data-cat="full_meals" data-slug="bbq-grilled-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">BBQ Grilled Chicken</span>
       <span class="rr-meta">Chicken · BBQ</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#blackpepperchicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="blackpepperchicken" onclick="toggleExpand(this)">
       <span class="rr-num">02</span>
       <span class="rr-name">Black Pepper Chicken</span>
       <span class="rr-meta">Chicken · Chinese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#bolognese" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="bolognese" onclick="toggleExpand(this)">
       <span class="rr-num">03</span>
       <span class="rr-name">Bolognese</span>
       <span class="rr-meta">Beef & Pork · Pasta</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#buffalo-chickpea-salad" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="buffalo-chickpea-salad" onclick="toggleExpand(this)">
       <span class="rr-num">04</span>
       <span class="rr-name">Buffalo Chicken & Chickpea Salad</span>
       <span class="rr-meta">Salad · High Protein</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#butterchicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="butterchicken" onclick="toggleExpand(this)">
       <span class="rr-num">05</span>
       <span class="rr-name">Butter Chicken</span>
       <span class="rr-meta">Chicken · Indian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#carnitas" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="carnitas" onclick="toggleExpand(this)">
       <span class="rr-num">06</span>
       <span class="rr-name">Carnitas</span>
       <span class="rr-meta">Pork · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#frijoles" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="frijoles" onclick="toggleExpand(this)">
       <span class="rr-num">07</span>
       <span class="rr-name">Cheesy Frijoles Charros</span>
       <span class="rr-meta">Chicken · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chicken-burritos" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chicken-burritos" onclick="toggleExpand(this)">
       <span class="rr-num">08</span>
       <span class="rr-name">Chicken Burritos</span>
       <span class="rr-meta">Chicken · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#enchiladas" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="enchiladas" onclick="toggleExpand(this)">
       <span class="rr-num">09</span>
       <span class="rr-name">Chicken Enchiladas Verdes</span>
       <span class="rr-meta">Chicken · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#gyros" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="gyros" onclick="toggleExpand(this)">
       <span class="rr-num">10</span>
       <span class="rr-name">Chicken Gyros</span>
       <span class="rr-meta">Chicken · Greek</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chicken-marsala" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chicken-marsala" onclick="toggleExpand(this)">
       <span class="rr-num">11</span>
       <span class="rr-name">Chicken Marsala</span>
       <span class="rr-meta">Chicken · Italian-American</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#shawarma" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="shawarma" onclick="toggleExpand(this)">
       <span class="rr-num">12</span>
       <span class="rr-name">Chicken Shawarma</span>
       <span class="rr-meta">Chicken · Middle Eastern</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chuck-sandwich" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chuck-sandwich" onclick="toggleExpand(this)">
       <span class="rr-num">13</span>
       <span class="rr-name">Chuck Roast Sandwich</span>
       <span class="rr-meta">Beef · Sandwich</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#coconut-lime-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="coconut-lime-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">14</span>
       <span class="rr-name">Coconut Lime Cilantro Grilled Chicken</span>
       <span class="rr-meta">Chicken · Thai-Inspired</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#creamy-garlic-chicken-pasta" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="creamy-garlic-chicken-pasta" onclick="toggleExpand(this)">
       <span class="rr-num">15</span>
       <span class="rr-name">Creamy Garlic Chicken Pasta</span>
       <span class="rr-meta">Chicken · Pasta · 30 min</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#crockpot-meatballs" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="crockpot-meatballs" onclick="toggleExpand(this)">
       <span class="rr-num">16</span>
       <span class="rr-name">Crockpot Alfredo Meatballs</span>
       <span class="rr-meta">Beef · Crockpot</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#moros" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="moros" onclick="toggleExpand(this)">
       <span class="rr-num">17</span>
       <span class="rr-name">Cuban Black Beans & Rice</span>
       <span class="rr-meta">Rice · Cuban</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pork-adobo" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="pork-adobo" onclick="toggleExpand(this)">
       <span class="rr-num">18</span>
       <span class="rr-name">Filipino Pork Adobo</span>
       <span class="rr-meta">Pork · Filipino</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#french-chicken-casserole" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="french-chicken-casserole" onclick="toggleExpand(this)">
       <span class="rr-num">19</span>
       <span class="rr-name">French Chicken Casserole</span>
       <span class="rr-meta">Chicken · French · Casserole</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#greekyogurt" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="greekyogurt" onclick="toggleExpand(this)">
       <span class="rr-num">20</span>
       <span class="rr-name">Greek Yogurt Chicken Wrap</span>
       <span class="rr-meta">Chicken · Greek</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#green-chili-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="green-chili-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">21</span>
       <span class="rr-name">Green Chili Chicken Dip</span>
       <span class="rr-meta">Chicken · Dip</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#harissa-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="harissa-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">22</span>
       <span class="rr-name">Harissa Chicken</span>
       <span class="rr-meta">Chicken · North African</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jamaican-brown-stew-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jamaican-brown-stew-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">23</span>
       <span class="rr-name">Jamaican Brown Stew Chicken</span>
       <span class="rr-meta">Chicken · Jamaican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jerkchicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jerkchicken" onclick="toggleExpand(this)">
       <span class="rr-num">24</span>
       <span class="rr-name">Jamaican Jerk Chicken</span>
       <span class="rr-meta">Chicken · Caribbean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jamaican-rice-peas" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jamaican-rice-peas" onclick="toggleExpand(this)">
       <span class="rr-num">25</span>
       <span class="rr-name">Jamaican Rice & Peas</span>
       <span class="rr-meta">Rice · Jamaican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#korean-braised-short-ribs" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="korean-braised-short-ribs" onclick="toggleExpand(this)">
       <span class="rr-num">26</span>
       <span class="rr-name">Korean Braised Short Ribs</span>
       <span class="rr-meta">Beef · Korean · Braised</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#korean-fried-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="korean-fried-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">27</span>
       <span class="rr-name">Korean Fried Chicken</span>
       <span class="rr-meta">Chicken · Korean · Fried</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#koreanporkbowl" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="koreanporkbowl" onclick="toggleExpand(this)">
       <span class="rr-num">28</span>
       <span class="rr-name">Korean Pork Bowl</span>
       <span class="rr-meta">Pork · Korean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#kung-pao-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="kung-pao-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">29</span>
       <span class="rr-name">Kung Pao Chicken</span>
       <span class="rr-meta">Chicken · Chinese · Stir-Fry</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#la-galbi" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="la-galbi" onclick="toggleExpand(this)">
       <span class="rr-num">30</span>
       <span class="rr-name">LA Galbi (Korean BBQ Short Ribs)</span>
       <span class="rr-meta">Beef · Korean BBQ</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#lemongrassbeef" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="lemongrassbeef" onclick="toggleExpand(this)">
       <span class="rr-num">31</span>
       <span class="rr-name">Lemongrass Beef Stir-Fry</span>
       <span class="rr-meta">Beef · Asian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#lemongrass-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="lemongrass-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">32</span>
       <span class="rr-name">Lemongrass Chicken</span>
       <span class="rr-meta">Chicken · Vietnamese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#mac-and-cheese" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="mac-and-cheese" onclick="toggleExpand(this)">
       <span class="rr-num">33</span>
       <span class="rr-name">Mac & Cheese (Crew Mods)</span>
       <span class="rr-meta">Pasta · Mac & Cheese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#yellowrice" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="yellowrice" onclick="toggleExpand(this)">
       <span class="rr-num">34</span>
       <span class="rr-name">Mediterranean Yellow Rice</span>
       <span class="rr-meta">Rice · Mediterranean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#mexicanbowl" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="mexicanbowl" onclick="toggleExpand(this)">
       <span class="rr-num">35</span>
       <span class="rr-name">Mexican Bowl</span>
       <span class="rr-meta">Bowl · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#moo-shu-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="moo-shu-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">36</span>
       <span class="rr-name">Moo Shu Chicken</span>
       <span class="rr-meta">Chicken · Chinese · Stir-Fry</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jollof-rice" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jollof-rice" onclick="toggleExpand(this)">
       <span class="rr-num">37</span>
       <span class="rr-name">Nigerian Jollof Rice</span>
       <span class="rr-meta">Rice · West African</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#padthai" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="padthai" onclick="toggleExpand(this)">
       <span class="rr-num">38</span>
       <span class="rr-name">Pad Thai</span>
       <span class="rr-meta">Noodles · Thai</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chowmein" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chowmein" onclick="toggleExpand(this)">
       <span class="rr-num">39</span>
       <span class="rr-name">Panda Express Chow Mein</span>
       <span class="rr-meta">Noodles · Chinese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#penne" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="penne" onclick="toggleExpand(this)">
       <span class="rr-num">40</span>
       <span class="rr-name">Penne Vodka</span>
       <span class="rr-meta">Pasta · Italian-American</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#potroast" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="potroast" onclick="toggleExpand(this)">
       <span class="rr-num">41</span>
       <span class="rr-name">Perfect Pot Roast</span>
       <span class="rr-meta">Beef · Comfort</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pestochicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="pestochicken" onclick="toggleExpand(this)">
       <span class="rr-num">42</span>
       <span class="rr-name">Pesto Chicken & Broccoli</span>
       <span class="rr-meta">Chicken · One Pan</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pork-chile-verde" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="pork-chile-verde" onclick="toggleExpand(this)">
       <span class="rr-num">43</span>
       <span class="rr-name">Pork Chile Verde</span>
       <span class="rr-meta">Pork · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#costco-bowl" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="costco-bowl" onclick="toggleExpand(this)">
       <span class="rr-num">44</span>
       <span class="rr-name">Rotisserie Chicken Bowl</span>
       <span class="rr-meta">Bowl · Leftover Meal</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#short-rib-ragu" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="short-rib-ragu" onclick="toggleExpand(this)">
       <span class="rr-num">45</span>
       <span class="rr-name">Short Rib Ragù Pasta</span>
       <span class="rr-meta">Beef · Pasta</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#shredded-beef-tacos" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="shredded-beef-tacos" onclick="toggleExpand(this)">
       <span class="rr-num">46</span>
       <span class="rr-name">Shredded Beef Tacos</span>
       <span class="rr-meta">Beef · Tacos · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chipotle-barbacoa" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chipotle-barbacoa" onclick="toggleExpand(this)">
       <span class="rr-num">47</span>
       <span class="rr-name">Slow Cooker Barbacoa</span>
       <span class="rr-meta">Beef · Mexican · Slow Cooker</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#smashburger" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="smashburger" onclick="toggleExpand(this)">
       <span class="rr-num">48</span>
       <span class="rr-name">Smash Burger</span>
       <span class="rr-meta">Beef · Burger</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#xlb" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="xlb" onclick="toggleExpand(this)">
       <span class="rr-num">49</span>
       <span class="rr-name">Soup Dumplings (Xiao Long Bao)</span>
       <span class="rr-meta">Dumplings · Chinese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#spicy-vodka-pasta" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="spicy-vodka-pasta" onclick="toggleExpand(this)">
       <span class="rr-num">50</span>
       <span class="rr-name">Spicy Vodka Pasta</span>
       <span class="rr-meta">Pasta · Spicy</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#texas-pulled-pork" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="texas-pulled-pork" onclick="toggleExpand(this)">
       <span class="rr-num">51</span>
       <span class="rr-name">Texas Smoked Pulled Pork</span>
       <span class="rr-meta">Pork · Smoker</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#turmeric-rice-combo" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="turmeric-rice-combo" onclick="toggleExpand(this)">
       <span class="rr-num">52</span>
       <span class="rr-name">Turmeric Rice + Brazilian Beans + SW Salad</span>
       <span class="rr-meta">Bowl · Three-Component Meal</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#tuscan-chicken-pasta" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="tuscan-chicken-pasta" onclick="toggleExpand(this)">
       <span class="rr-num">53</span>
       <span class="rr-name">Tuscan Chicken Pasta</span>
       <span class="rr-meta">Chicken · Pasta · Tuscan</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#white-chicken-chili" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="white-chicken-chili" onclick="toggleExpand(this)">
       <span class="rr-num">54</span>
       <span class="rr-name">White Chicken Chili</span>
       <span class="rr-meta">Chicken · Chili</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#zuppatoscana" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="zuppatoscana" onclick="toggleExpand(this)">
       <span class="rr-num">55</span>
       <span class="rr-name">Zuppa Toscana</span>
       <span class="rr-meta">Soup · Italian-American</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#short-rib-lasagna" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="short-rib-lasagna" onclick="toggleExpand(this)">
       <span class="rr-num">56</span>
       <span class="rr-name">Short Rib Lasagna</span>
       <span class="rr-meta">Pasta · Beef · Weekend Project</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chicken-vindaloo" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chicken-vindaloo" onclick="toggleExpand(this)">
       <span class="rr-num">57</span>
       <span class="rr-name">Chicken Vindaloo (Easy)</span>
       <span class="rr-meta">Indian · Chicken · Spicy</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jalapeno-crack-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jalapeno-crack-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">58</span>
       <span class="rr-name">Crockpot Jalapeño Crack Chicken Sandwiches</span>
       <span class="rr-meta">Slow Cooker · Chicken · Sandwich</span>
       <span class="rr-arrow">→</span>
-    </a>
+    </div>
     <div class="section-label">Sides &amp; Sauces <span>22 recipes · A–Z</span></div>
-    <a href="DRC_recipes_v13.html#authentic-mexican-rice" class="recipe-row" data-cat="sides">
+    <div class="recipe-row" data-cat="sides" data-slug="authentic-mexican-rice" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">Authentic Mexican Rice</span>
       <span class="rr-meta">Rice · Mexican · Side</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#avocadoeggrolls" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="avocadoeggrolls" onclick="toggleExpand(this)">
       <span class="rr-num">02</span>
       <span class="rr-name">Avocado Egg Rolls</span>
       <span class="rr-meta">Appetizer · Fried</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#slaw" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="slaw" onclick="toggleExpand(this)">
       <span class="rr-num">03</span>
       <span class="rr-name">Cabbage & Carrot Slaw</span>
       <span class="rr-meta">Slaw · Side Dish</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#charred-poblano-black-bean-salad" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="charred-poblano-black-bean-salad" onclick="toggleExpand(this)">
       <span class="rr-num">04</span>
       <span class="rr-name">Charred Poblano Black Bean Salad</span>
       <span class="rr-meta">Salad · Beans</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#roastpotatoes" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="roastpotatoes" onclick="toggleExpand(this)">
       <span class="rr-num">05</span>
       <span class="rr-name">Crispy Roast Potatoes</span>
       <span class="rr-meta">Side · British</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#garlic-naan" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="garlic-naan" onclick="toggleExpand(this)">
       <span class="rr-num">06</span>
       <span class="rr-name">Garlic Naan</span>
       <span class="rr-meta">Bread · Indian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#greeksalad" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="greeksalad" onclick="toggleExpand(this)">
       <span class="rr-num">07</span>
       <span class="rr-name">Greek Salad</span>
       <span class="rr-meta">Salad · Greek</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#halal-garlic-sauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="halal-garlic-sauce" onclick="toggleExpand(this)">
       <span class="rr-num">08</span>
       <span class="rr-name">Halal Cart Garlic Sauce</span>
       <span class="rr-meta">Sauce · Halal Cart Style</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pitabread" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="pitabread" onclick="toggleExpand(this)">
       <span class="rr-num">09</span>
       <span class="rr-name">Homemade Pita Bread</span>
       <span class="rr-meta">Bread · Mediterranean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#ranch" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="ranch" onclick="toggleExpand(this)">
       <span class="rr-num">10</span>
       <span class="rr-name">Homemade Ranch</span>
       <span class="rr-meta">Dressing · Crew Recipe</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#yellowrice" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="yellowrice" onclick="toggleExpand(this)">
       <span class="rr-num">11</span>
       <span class="rr-name">Mediterranean Yellow Rice</span>
       <span class="rr-meta">Rice · Mediterranean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#mexicanblackbeans" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="mexicanblackbeans" onclick="toggleExpand(this)">
       <span class="rr-num">12</span>
       <span class="rr-name">Mexican Black Beans</span>
       <span class="rr-meta">Beans · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#orangesauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="orangesauce" onclick="toggleExpand(this)">
       <span class="rr-num">13</span>
       <span class="rr-name">Orange Chicken Sauce</span>
       <span class="rr-meta">Sauce · Asian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pad-thai-sauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="pad-thai-sauce" onclick="toggleExpand(this)">
       <span class="rr-num">14</span>
       <span class="rr-name">Pad Thai Sauce (Standalone)</span>
       <span class="rr-meta">Sauce · Thai</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#vinaigrette" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="vinaigrette" onclick="toggleExpand(this)">
       <span class="rr-num">15</span>
       <span class="rr-name">Parmesan Vinaigrette</span>
       <span class="rr-meta">Sauce · Dressing</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#alfredo" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="alfredo" onclick="toggleExpand(this)">
       <span class="rr-num">16</span>
       <span class="rr-name">Simple Alfredo Sauce</span>
       <span class="rr-meta">Sauce · Italian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chipotlebeans" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="chipotlebeans" onclick="toggleExpand(this)">
       <span class="rr-num">17</span>
       <span class="rr-name">Smoky Black Beans</span>
       <span class="rr-meta">Beans · Copycat</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#sourdough-english-muffins" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="sourdough-english-muffins" onclick="toggleExpand(this)">
       <span class="rr-num">18</span>
       <span class="rr-name">Sourdough English Muffins</span>
       <span class="rr-meta">Bread · Sourdough</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#texas-bbq-sauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="texas-bbq-sauce" onclick="toggleExpand(this)">
       <span class="rr-num">19</span>
       <span class="rr-name">Texas BBQ Sauce</span>
       <span class="rr-meta">Sauce · Texas BBQ</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#cafe-rio-dressing" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="cafe-rio-dressing" onclick="toggleExpand(this)">
       <span class="rr-num">20</span>
       <span class="rr-name">Tomatillo Ranch Dressing</span>
       <span class="rr-meta">Dressing · Sauce · Copycat</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#crew-bbq-sauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="crew-bbq-sauce" onclick="toggleExpand(this)">
       <span class="rr-num">21</span>
       <span class="rr-name">Gold BBQ Sauce</span>
       <span class="rr-meta">Sauce · BBQ · Mustard-Based</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#salsa-de-rabano" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="salsa-de-rabano" onclick="toggleExpand(this)">
       <span class="rr-num">22</span>
       <span class="rr-name">Salsa de Rábano</span>
       <span class="rr-meta">Salsa · Mexican · Radish</span>
       <span class="rr-arrow">→</span>
-    </a>
+    </div>
     <div class="section-label">Pizza <span>1 recipe</span></div>
-    <a href="DRC_recipes_v13.html#detroit-pizza" class="recipe-row" data-cat="pizza">
+    <div class="recipe-row" data-cat="pizza" data-slug="detroit-pizza" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">Detroit-Style Pizza</span>
       <span class="rr-meta">Pizza · Detroit Style</span>
       <span class="rr-arrow">→</span>
-    </a>
+    </div>
     <div class="section-label">Desserts &amp; Baking <span>19 recipes · A–Z</span></div>
-    <a href="DRC_recipes_v13.html#biscoff-cookies" class="recipe-row" data-cat="desserts">
+    <div class="recipe-row" data-cat="desserts" data-slug="biscoff-cookies" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">Biscoff Butter Cookies</span>
       <span class="rr-meta">Cookies · Biscoff</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#blueberry-muffins" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="blueberry-muffins" onclick="toggleExpand(this)">
       <span class="rr-num">02</span>
       <span class="rr-name">Blueberry Muffins</span>
       <span class="rr-meta">Muffins · Bakery Style</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#browned-butter-cookies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="browned-butter-cookies" onclick="toggleExpand(this)">
       <span class="rr-num">03</span>
       <span class="rr-name">Browned Butter Toffee Choc Chip Cookies</span>
       <span class="rr-meta">Cookies · Browned Butter</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#buttermilk-breakfast" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="buttermilk-breakfast" onclick="toggleExpand(this)">
       <span class="rr-num">04</span>
       <span class="rr-name">Buttermilk Breakfast Trio</span>
       <span class="rr-meta">Breakfast · Buttermilk</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#kneaders-french-toast" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="kneaders-french-toast" onclick="toggleExpand(this)">
       <span class="rr-num">05</span>
       <span class="rr-name">Chunky Cinnamon French Toast</span>
       <span class="rr-meta">Breakfast · French Toast</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#cinnamon-rolls-brown-butter" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="cinnamon-rolls-brown-butter" onclick="toggleExpand(this)">
       <span class="rr-num">06</span>
       <span class="rr-name">Cinnamon Rolls (Brown Butter Frosting)</span>
       <span class="rr-meta">Baking · Cinnamon Rolls</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pancakes" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="pancakes" onclick="toggleExpand(this)">
       <span class="rr-num">07</span>
       <span class="rr-name">Fluffy Pancakes</span>
       <span class="rr-meta">Breakfast · Pancakes</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#blueberry-pop-tarts" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="blueberry-pop-tarts" onclick="toggleExpand(this)">
       <span class="rr-num">08</span>
       <span class="rr-name">Homemade Homemade Blueberry Toaster Pastries</span>
       <span class="rr-meta">Pastry · Breakfast</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#nbc-vanilla" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="nbc-vanilla" onclick="toggleExpand(this)">
       <span class="rr-num">09</span>
       <span class="rr-name">Nothing Bundt Cake (Classic Vanilla)</span>
       <span class="rr-meta">Cake · Copycat</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pumpkin-cinnamon-rolls" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="pumpkin-cinnamon-rolls" onclick="toggleExpand(this)">
       <span class="rr-num">10</span>
       <span class="rr-name">Pumpkin Cinnamon Rolls</span>
       <span class="rr-meta">Baking · Seasonal</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#raspberry-muffins" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="raspberry-muffins" onclick="toggleExpand(this)">
       <span class="rr-num">11</span>
       <span class="rr-name">Raspberry Muffins</span>
       <span class="rr-meta">Muffins · Bakery Style</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#scotcheroos" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="scotcheroos" onclick="toggleExpand(this)">
       <span class="rr-num">12</span>
       <span class="rr-name">Scotcheroos</span>
       <span class="rr-meta">No-Bake · Bars</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#cookies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="cookies" onclick="toggleExpand(this)">
       <span class="rr-num">13</span>
       <span class="rr-name">Sinner Cookies</span>
       <span class="rr-meta">Baking · Cookies</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#sinner-v2" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="sinner-v2" onclick="toggleExpand(this)">
       <span class="rr-num">14</span>
       <span class="rr-name">Sinner Cookies (Full Recipe)</span>
       <span class="rr-meta">Cookies · Crew Fave</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#sourdough-sticky-buns" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="sourdough-sticky-buns" onclick="toggleExpand(this)">
       <span class="rr-num">15</span>
       <span class="rr-name">Sourdough Sticky Buns</span>
       <span class="rr-meta">Sourdough · Overnight · Crew Photos</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#world-peace-cookies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="world-peace-cookies" onclick="toggleExpand(this)">
       <span class="rr-num">16</span>
       <span class="rr-name">World Peace Cookies</span>
       <span class="rr-meta">Cookies · Chocolate · Dorie Greenspan</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#toffee-chocolate-chip-cookies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="toffee-chocolate-chip-cookies" onclick="toggleExpand(this)">
       <span class="rr-num">17</span>
       <span class="rr-name">Chocolate Chip Toffee Cookie</span>
       <span class="rr-meta">Cookies · Browned Butter · Toffee</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#fudge-brownies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="fudge-brownies" onclick="toggleExpand(this)">
       <span class="rr-num">18</span>
       <span class="rr-name">Bakery-Style Fudge Brownies</span>
       <span class="rr-meta">Brownies · Chocolate · Fudgy</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#sourdough-cinnamon-roll-focaccia" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="sourdough-cinnamon-roll-focaccia" onclick="toggleExpand(this)">
       <span class="rr-num">19</span>
       <span class="rr-name">Sourdough Cinnamon Roll Focaccia</span>
       <span class="rr-meta">Sourdough · Bread · Cinnamon · Brunch</span>
       <span class="rr-arrow">→</span>
-    </a>
+    </div>
   </div>
 
   <!-- FULL MEALS -->
   <div class="recipe-section" id="section-full_meals">
     <div class="section-label">Full Meals <span>58 recipes · A–Z</span></div>
-    <a href="DRC_recipes_v13.html#bbq-grilled-chicken" class="recipe-row" data-cat="full_meals">
+    <div class="recipe-row" data-cat="full_meals" data-slug="bbq-grilled-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">BBQ Grilled Chicken</span>
       <span class="rr-meta">Chicken · BBQ</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#blackpepperchicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="blackpepperchicken" onclick="toggleExpand(this)">
       <span class="rr-num">02</span>
       <span class="rr-name">Black Pepper Chicken</span>
       <span class="rr-meta">Chicken · Chinese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#bolognese" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="bolognese" onclick="toggleExpand(this)">
       <span class="rr-num">03</span>
       <span class="rr-name">Bolognese</span>
       <span class="rr-meta">Beef & Pork · Pasta</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#buffalo-chickpea-salad" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="buffalo-chickpea-salad" onclick="toggleExpand(this)">
       <span class="rr-num">04</span>
       <span class="rr-name">Buffalo Chicken & Chickpea Salad</span>
       <span class="rr-meta">Salad · High Protein</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#butterchicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="butterchicken" onclick="toggleExpand(this)">
       <span class="rr-num">05</span>
       <span class="rr-name">Butter Chicken</span>
       <span class="rr-meta">Chicken · Indian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#carnitas" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="carnitas" onclick="toggleExpand(this)">
       <span class="rr-num">06</span>
       <span class="rr-name">Carnitas</span>
       <span class="rr-meta">Pork · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#frijoles" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="frijoles" onclick="toggleExpand(this)">
       <span class="rr-num">07</span>
       <span class="rr-name">Cheesy Frijoles Charros</span>
       <span class="rr-meta">Chicken · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chicken-burritos" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chicken-burritos" onclick="toggleExpand(this)">
       <span class="rr-num">08</span>
       <span class="rr-name">Chicken Burritos</span>
       <span class="rr-meta">Chicken · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#enchiladas" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="enchiladas" onclick="toggleExpand(this)">
       <span class="rr-num">09</span>
       <span class="rr-name">Chicken Enchiladas Verdes</span>
       <span class="rr-meta">Chicken · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#gyros" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="gyros" onclick="toggleExpand(this)">
       <span class="rr-num">10</span>
       <span class="rr-name">Chicken Gyros</span>
       <span class="rr-meta">Chicken · Greek</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chicken-marsala" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chicken-marsala" onclick="toggleExpand(this)">
       <span class="rr-num">11</span>
       <span class="rr-name">Chicken Marsala</span>
       <span class="rr-meta">Chicken · Italian-American</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#shawarma" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="shawarma" onclick="toggleExpand(this)">
       <span class="rr-num">12</span>
       <span class="rr-name">Chicken Shawarma</span>
       <span class="rr-meta">Chicken · Middle Eastern</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chuck-sandwich" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chuck-sandwich" onclick="toggleExpand(this)">
       <span class="rr-num">13</span>
       <span class="rr-name">Chuck Roast Sandwich</span>
       <span class="rr-meta">Beef · Sandwich</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#coconut-lime-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="coconut-lime-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">14</span>
       <span class="rr-name">Coconut Lime Cilantro Grilled Chicken</span>
       <span class="rr-meta">Chicken · Thai-Inspired</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#creamy-garlic-chicken-pasta" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="creamy-garlic-chicken-pasta" onclick="toggleExpand(this)">
       <span class="rr-num">15</span>
       <span class="rr-name">Creamy Garlic Chicken Pasta</span>
       <span class="rr-meta">Chicken · Pasta · 30 min</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#crockpot-meatballs" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="crockpot-meatballs" onclick="toggleExpand(this)">
       <span class="rr-num">16</span>
       <span class="rr-name">Crockpot Alfredo Meatballs</span>
       <span class="rr-meta">Beef · Crockpot</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#moros" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="moros" onclick="toggleExpand(this)">
       <span class="rr-num">17</span>
       <span class="rr-name">Cuban Black Beans & Rice</span>
       <span class="rr-meta">Rice · Cuban</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pork-adobo" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="pork-adobo" onclick="toggleExpand(this)">
       <span class="rr-num">18</span>
       <span class="rr-name">Filipino Pork Adobo</span>
       <span class="rr-meta">Pork · Filipino</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#french-chicken-casserole" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="french-chicken-casserole" onclick="toggleExpand(this)">
       <span class="rr-num">19</span>
       <span class="rr-name">French Chicken Casserole</span>
       <span class="rr-meta">Chicken · French · Casserole</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#greekyogurt" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="greekyogurt" onclick="toggleExpand(this)">
       <span class="rr-num">20</span>
       <span class="rr-name">Greek Yogurt Chicken Wrap</span>
       <span class="rr-meta">Chicken · Greek</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#green-chili-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="green-chili-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">21</span>
       <span class="rr-name">Green Chili Chicken Dip</span>
       <span class="rr-meta">Chicken · Dip</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#harissa-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="harissa-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">22</span>
       <span class="rr-name">Harissa Chicken</span>
       <span class="rr-meta">Chicken · North African</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jamaican-brown-stew-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jamaican-brown-stew-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">23</span>
       <span class="rr-name">Jamaican Brown Stew Chicken</span>
       <span class="rr-meta">Chicken · Jamaican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jerkchicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jerkchicken" onclick="toggleExpand(this)">
       <span class="rr-num">24</span>
       <span class="rr-name">Jamaican Jerk Chicken</span>
       <span class="rr-meta">Chicken · Caribbean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jamaican-rice-peas" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jamaican-rice-peas" onclick="toggleExpand(this)">
       <span class="rr-num">25</span>
       <span class="rr-name">Jamaican Rice & Peas</span>
       <span class="rr-meta">Rice · Jamaican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#korean-braised-short-ribs" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="korean-braised-short-ribs" onclick="toggleExpand(this)">
       <span class="rr-num">26</span>
       <span class="rr-name">Korean Braised Short Ribs</span>
       <span class="rr-meta">Beef · Korean · Braised</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#korean-fried-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="korean-fried-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">27</span>
       <span class="rr-name">Korean Fried Chicken</span>
       <span class="rr-meta">Chicken · Korean · Fried</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#koreanporkbowl" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="koreanporkbowl" onclick="toggleExpand(this)">
       <span class="rr-num">28</span>
       <span class="rr-name">Korean Pork Bowl</span>
       <span class="rr-meta">Pork · Korean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#kung-pao-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="kung-pao-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">29</span>
       <span class="rr-name">Kung Pao Chicken</span>
       <span class="rr-meta">Chicken · Chinese · Stir-Fry</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#la-galbi" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="la-galbi" onclick="toggleExpand(this)">
       <span class="rr-num">30</span>
       <span class="rr-name">LA Galbi (Korean BBQ Short Ribs)</span>
       <span class="rr-meta">Beef · Korean BBQ</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#lemongrassbeef" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="lemongrassbeef" onclick="toggleExpand(this)">
       <span class="rr-num">31</span>
       <span class="rr-name">Lemongrass Beef Stir-Fry</span>
       <span class="rr-meta">Beef · Asian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#lemongrass-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="lemongrass-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">32</span>
       <span class="rr-name">Lemongrass Chicken</span>
       <span class="rr-meta">Chicken · Vietnamese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#mac-and-cheese" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="mac-and-cheese" onclick="toggleExpand(this)">
       <span class="rr-num">33</span>
       <span class="rr-name">Mac & Cheese (Crew Mods)</span>
       <span class="rr-meta">Pasta · Mac & Cheese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#yellowrice" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="yellowrice" onclick="toggleExpand(this)">
       <span class="rr-num">34</span>
       <span class="rr-name">Mediterranean Yellow Rice</span>
       <span class="rr-meta">Rice · Mediterranean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#mexicanbowl" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="mexicanbowl" onclick="toggleExpand(this)">
       <span class="rr-num">35</span>
       <span class="rr-name">Mexican Bowl</span>
       <span class="rr-meta">Bowl · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#moo-shu-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="moo-shu-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">36</span>
       <span class="rr-name">Moo Shu Chicken</span>
       <span class="rr-meta">Chicken · Chinese · Stir-Fry</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jollof-rice" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jollof-rice" onclick="toggleExpand(this)">
       <span class="rr-num">37</span>
       <span class="rr-name">Nigerian Jollof Rice</span>
       <span class="rr-meta">Rice · West African</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#padthai" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="padthai" onclick="toggleExpand(this)">
       <span class="rr-num">38</span>
       <span class="rr-name">Pad Thai</span>
       <span class="rr-meta">Noodles · Thai</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chowmein" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chowmein" onclick="toggleExpand(this)">
       <span class="rr-num">39</span>
       <span class="rr-name">Panda Express Chow Mein</span>
       <span class="rr-meta">Noodles · Chinese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#penne" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="penne" onclick="toggleExpand(this)">
       <span class="rr-num">40</span>
       <span class="rr-name">Penne Vodka</span>
       <span class="rr-meta">Pasta · Italian-American</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#potroast" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="potroast" onclick="toggleExpand(this)">
       <span class="rr-num">41</span>
       <span class="rr-name">Perfect Pot Roast</span>
       <span class="rr-meta">Beef · Comfort</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pestochicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="pestochicken" onclick="toggleExpand(this)">
       <span class="rr-num">42</span>
       <span class="rr-name">Pesto Chicken & Broccoli</span>
       <span class="rr-meta">Chicken · One Pan</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pork-chile-verde" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="pork-chile-verde" onclick="toggleExpand(this)">
       <span class="rr-num">43</span>
       <span class="rr-name">Pork Chile Verde</span>
       <span class="rr-meta">Pork · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#costco-bowl" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="costco-bowl" onclick="toggleExpand(this)">
       <span class="rr-num">44</span>
       <span class="rr-name">Rotisserie Chicken Bowl</span>
       <span class="rr-meta">Bowl · Leftover Meal</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#short-rib-ragu" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="short-rib-ragu" onclick="toggleExpand(this)">
       <span class="rr-num">45</span>
       <span class="rr-name">Short Rib Ragù Pasta</span>
       <span class="rr-meta">Beef · Pasta</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#shredded-beef-tacos" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="shredded-beef-tacos" onclick="toggleExpand(this)">
       <span class="rr-num">46</span>
       <span class="rr-name">Shredded Beef Tacos</span>
       <span class="rr-meta">Beef · Tacos · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chipotle-barbacoa" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chipotle-barbacoa" onclick="toggleExpand(this)">
       <span class="rr-num">47</span>
       <span class="rr-name">Slow Cooker Barbacoa</span>
       <span class="rr-meta">Beef · Mexican · Slow Cooker</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#smashburger" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="smashburger" onclick="toggleExpand(this)">
       <span class="rr-num">48</span>
       <span class="rr-name">Smash Burger</span>
       <span class="rr-meta">Beef · Burger</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#xlb" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="xlb" onclick="toggleExpand(this)">
       <span class="rr-num">49</span>
       <span class="rr-name">Soup Dumplings (Xiao Long Bao)</span>
       <span class="rr-meta">Dumplings · Chinese</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#spicy-vodka-pasta" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="spicy-vodka-pasta" onclick="toggleExpand(this)">
       <span class="rr-num">50</span>
       <span class="rr-name">Spicy Vodka Pasta</span>
       <span class="rr-meta">Pasta · Spicy</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#texas-pulled-pork" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="texas-pulled-pork" onclick="toggleExpand(this)">
       <span class="rr-num">51</span>
       <span class="rr-name">Texas Smoked Pulled Pork</span>
       <span class="rr-meta">Pork · Smoker</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#turmeric-rice-combo" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="turmeric-rice-combo" onclick="toggleExpand(this)">
       <span class="rr-num">52</span>
       <span class="rr-name">Turmeric Rice + Brazilian Beans + SW Salad</span>
       <span class="rr-meta">Bowl · Three-Component Meal</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#tuscan-chicken-pasta" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="tuscan-chicken-pasta" onclick="toggleExpand(this)">
       <span class="rr-num">53</span>
       <span class="rr-name">Tuscan Chicken Pasta</span>
       <span class="rr-meta">Chicken · Pasta · Tuscan</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#white-chicken-chili" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="white-chicken-chili" onclick="toggleExpand(this)">
       <span class="rr-num">54</span>
       <span class="rr-name">White Chicken Chili</span>
       <span class="rr-meta">Chicken · Chili</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#zuppatoscana" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="zuppatoscana" onclick="toggleExpand(this)">
       <span class="rr-num">55</span>
       <span class="rr-name">Zuppa Toscana</span>
       <span class="rr-meta">Soup · Italian-American</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#short-rib-lasagna" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="short-rib-lasagna" onclick="toggleExpand(this)">
       <span class="rr-num">56</span>
       <span class="rr-name">Short Rib Lasagna</span>
       <span class="rr-meta">Pasta · Beef · Weekend Project</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chicken-vindaloo" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="chicken-vindaloo" onclick="toggleExpand(this)">
       <span class="rr-num">57</span>
       <span class="rr-name">Chicken Vindaloo (Easy)</span>
       <span class="rr-meta">Indian · Chicken · Spicy</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#jalapeno-crack-chicken" class="recipe-row" data-cat="full_meals">
+    </div>
+    <div class="recipe-row" data-cat="full_meals" data-slug="jalapeno-crack-chicken" onclick="toggleExpand(this)">
       <span class="rr-num">58</span>
       <span class="rr-name">Crockpot Jalapeño Crack Chicken Sandwiches</span>
       <span class="rr-meta">Slow Cooker · Chicken · Sandwich</span>
       <span class="rr-arrow">→</span>
-    </a>
+    </div>
   </div>
 
   <!-- SIDES -->
   <div class="recipe-section" id="section-sides">
     <div class="section-label">Sides &amp; Sauces <span>22 recipes · A–Z</span></div>
-    <a href="DRC_recipes_v13.html#authentic-mexican-rice" class="recipe-row" data-cat="sides">
+    <div class="recipe-row" data-cat="sides" data-slug="authentic-mexican-rice" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">Authentic Mexican Rice</span>
       <span class="rr-meta">Rice · Mexican · Side</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#avocadoeggrolls" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="avocadoeggrolls" onclick="toggleExpand(this)">
       <span class="rr-num">02</span>
       <span class="rr-name">Avocado Egg Rolls</span>
       <span class="rr-meta">Appetizer · Fried</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#slaw" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="slaw" onclick="toggleExpand(this)">
       <span class="rr-num">03</span>
       <span class="rr-name">Cabbage & Carrot Slaw</span>
       <span class="rr-meta">Slaw · Side Dish</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#charred-poblano-black-bean-salad" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="charred-poblano-black-bean-salad" onclick="toggleExpand(this)">
       <span class="rr-num">04</span>
       <span class="rr-name">Charred Poblano Black Bean Salad</span>
       <span class="rr-meta">Salad · Beans</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#roastpotatoes" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="roastpotatoes" onclick="toggleExpand(this)">
       <span class="rr-num">05</span>
       <span class="rr-name">Crispy Roast Potatoes</span>
       <span class="rr-meta">Side · British</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#garlic-naan" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="garlic-naan" onclick="toggleExpand(this)">
       <span class="rr-num">06</span>
       <span class="rr-name">Garlic Naan</span>
       <span class="rr-meta">Bread · Indian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#greeksalad" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="greeksalad" onclick="toggleExpand(this)">
       <span class="rr-num">07</span>
       <span class="rr-name">Greek Salad</span>
       <span class="rr-meta">Salad · Greek</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#halal-garlic-sauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="halal-garlic-sauce" onclick="toggleExpand(this)">
       <span class="rr-num">08</span>
       <span class="rr-name">Halal Cart Garlic Sauce</span>
       <span class="rr-meta">Sauce · Halal Cart Style</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pitabread" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="pitabread" onclick="toggleExpand(this)">
       <span class="rr-num">09</span>
       <span class="rr-name">Homemade Pita Bread</span>
       <span class="rr-meta">Bread · Mediterranean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#ranch" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="ranch" onclick="toggleExpand(this)">
       <span class="rr-num">10</span>
       <span class="rr-name">Homemade Ranch</span>
       <span class="rr-meta">Dressing · Crew Recipe</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#yellowrice" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="yellowrice" onclick="toggleExpand(this)">
       <span class="rr-num">11</span>
       <span class="rr-name">Mediterranean Yellow Rice</span>
       <span class="rr-meta">Rice · Mediterranean</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#mexicanblackbeans" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="mexicanblackbeans" onclick="toggleExpand(this)">
       <span class="rr-num">12</span>
       <span class="rr-name">Mexican Black Beans</span>
       <span class="rr-meta">Beans · Mexican</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#orangesauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="orangesauce" onclick="toggleExpand(this)">
       <span class="rr-num">13</span>
       <span class="rr-name">Orange Chicken Sauce</span>
       <span class="rr-meta">Sauce · Asian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pad-thai-sauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="pad-thai-sauce" onclick="toggleExpand(this)">
       <span class="rr-num">14</span>
       <span class="rr-name">Pad Thai Sauce (Standalone)</span>
       <span class="rr-meta">Sauce · Thai</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#vinaigrette" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="vinaigrette" onclick="toggleExpand(this)">
       <span class="rr-num">15</span>
       <span class="rr-name">Parmesan Vinaigrette</span>
       <span class="rr-meta">Sauce · Dressing</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#alfredo" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="alfredo" onclick="toggleExpand(this)">
       <span class="rr-num">16</span>
       <span class="rr-name">Simple Alfredo Sauce</span>
       <span class="rr-meta">Sauce · Italian</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#chipotlebeans" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="chipotlebeans" onclick="toggleExpand(this)">
       <span class="rr-num">17</span>
       <span class="rr-name">Smoky Black Beans</span>
       <span class="rr-meta">Beans · Copycat</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#sourdough-english-muffins" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="sourdough-english-muffins" onclick="toggleExpand(this)">
       <span class="rr-num">18</span>
       <span class="rr-name">Sourdough English Muffins</span>
       <span class="rr-meta">Bread · Sourdough</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#texas-bbq-sauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="texas-bbq-sauce" onclick="toggleExpand(this)">
       <span class="rr-num">19</span>
       <span class="rr-name">Texas BBQ Sauce</span>
       <span class="rr-meta">Sauce · Texas BBQ</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#cafe-rio-dressing" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="cafe-rio-dressing" onclick="toggleExpand(this)">
       <span class="rr-num">20</span>
       <span class="rr-name">Tomatillo Ranch Dressing</span>
       <span class="rr-meta">Dressing · Sauce · Copycat</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#crew-bbq-sauce" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="crew-bbq-sauce" onclick="toggleExpand(this)">
       <span class="rr-num">21</span>
       <span class="rr-name">Gold BBQ Sauce</span>
       <span class="rr-meta">Sauce · BBQ · Mustard-Based</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#salsa-de-rabano" class="recipe-row" data-cat="sides">
+    </div>
+    <div class="recipe-row" data-cat="sides" data-slug="salsa-de-rabano" onclick="toggleExpand(this)">
       <span class="rr-num">22</span>
       <span class="rr-name">Salsa de Rábano</span>
       <span class="rr-meta">Salsa · Mexican · Radish</span>
       <span class="rr-arrow">→</span>
-    </a>
+    </div>
   </div>
 
   <!-- PIZZA -->
   <div class="recipe-section" id="section-pizza">
     <div class="section-label">Pizza <span>1 recipe</span></div>
-    <a href="DRC_recipes_v13.html#detroit-pizza" class="recipe-row" data-cat="pizza">
+    <div class="recipe-row" data-cat="pizza" data-slug="detroit-pizza" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">Detroit-Style Pizza</span>
       <span class="rr-meta">Pizza · Detroit Style</span>
       <span class="rr-arrow">→</span>
-    </a>
+    </div>
   </div>
 
   <!-- DESSERTS -->
   <div class="recipe-section" id="section-desserts">
     <div class="section-label">Desserts &amp; Baking <span>19 recipes · A–Z</span></div>
-    <a href="DRC_recipes_v13.html#biscoff-cookies" class="recipe-row" data-cat="desserts">
+    <div class="recipe-row" data-cat="desserts" data-slug="biscoff-cookies" onclick="toggleExpand(this)">
       <span class="rr-num">01</span>
       <span class="rr-name">Biscoff Butter Cookies</span>
       <span class="rr-meta">Cookies · Biscoff</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#blueberry-muffins" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="blueberry-muffins" onclick="toggleExpand(this)">
       <span class="rr-num">02</span>
       <span class="rr-name">Blueberry Muffins</span>
       <span class="rr-meta">Muffins · Bakery Style</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#browned-butter-cookies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="browned-butter-cookies" onclick="toggleExpand(this)">
       <span class="rr-num">03</span>
       <span class="rr-name">Browned Butter Toffee Choc Chip Cookies</span>
       <span class="rr-meta">Cookies · Browned Butter</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#buttermilk-breakfast" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="buttermilk-breakfast" onclick="toggleExpand(this)">
       <span class="rr-num">04</span>
       <span class="rr-name">Buttermilk Breakfast Trio</span>
       <span class="rr-meta">Breakfast · Buttermilk</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#kneaders-french-toast" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="kneaders-french-toast" onclick="toggleExpand(this)">
       <span class="rr-num">05</span>
       <span class="rr-name">Chunky Cinnamon French Toast</span>
       <span class="rr-meta">Breakfast · French Toast</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#cinnamon-rolls-brown-butter" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="cinnamon-rolls-brown-butter" onclick="toggleExpand(this)">
       <span class="rr-num">06</span>
       <span class="rr-name">Cinnamon Rolls (Brown Butter Frosting)</span>
       <span class="rr-meta">Baking · Cinnamon Rolls</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pancakes" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="pancakes" onclick="toggleExpand(this)">
       <span class="rr-num">07</span>
       <span class="rr-name">Fluffy Pancakes</span>
       <span class="rr-meta">Breakfast · Pancakes</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#blueberry-pop-tarts" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="blueberry-pop-tarts" onclick="toggleExpand(this)">
       <span class="rr-num">08</span>
       <span class="rr-name">Homemade Homemade Blueberry Toaster Pastries</span>
       <span class="rr-meta">Pastry · Breakfast</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#nbc-vanilla" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="nbc-vanilla" onclick="toggleExpand(this)">
       <span class="rr-num">09</span>
       <span class="rr-name">Nothing Bundt Cake (Classic Vanilla)</span>
       <span class="rr-meta">Cake · Copycat</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#pumpkin-cinnamon-rolls" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="pumpkin-cinnamon-rolls" onclick="toggleExpand(this)">
       <span class="rr-num">10</span>
       <span class="rr-name">Pumpkin Cinnamon Rolls</span>
       <span class="rr-meta">Baking · Seasonal</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#raspberry-muffins" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="raspberry-muffins" onclick="toggleExpand(this)">
       <span class="rr-num">11</span>
       <span class="rr-name">Raspberry Muffins</span>
       <span class="rr-meta">Muffins · Bakery Style</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#scotcheroos" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="scotcheroos" onclick="toggleExpand(this)">
       <span class="rr-num">12</span>
       <span class="rr-name">Scotcheroos</span>
       <span class="rr-meta">No-Bake · Bars</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#cookies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="cookies" onclick="toggleExpand(this)">
       <span class="rr-num">13</span>
       <span class="rr-name">Sinner Cookies</span>
       <span class="rr-meta">Baking · Cookies</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#sinner-v2" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="sinner-v2" onclick="toggleExpand(this)">
       <span class="rr-num">14</span>
       <span class="rr-name">Sinner Cookies (Full Recipe)</span>
       <span class="rr-meta">Cookies · Crew Fave</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#sourdough-sticky-buns" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="sourdough-sticky-buns" onclick="toggleExpand(this)">
       <span class="rr-num">15</span>
       <span class="rr-name">Sourdough Sticky Buns</span>
       <span class="rr-meta">Sourdough · Overnight · Crew Photos</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#world-peace-cookies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="world-peace-cookies" onclick="toggleExpand(this)">
       <span class="rr-num">16</span>
       <span class="rr-name">World Peace Cookies</span>
       <span class="rr-meta">Cookies · Chocolate · Dorie Greenspan</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#toffee-chocolate-chip-cookies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="toffee-chocolate-chip-cookies" onclick="toggleExpand(this)">
       <span class="rr-num">17</span>
       <span class="rr-name">Chocolate Chip Toffee Cookie</span>
       <span class="rr-meta">Cookies · Browned Butter · Toffee</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#fudge-brownies" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="fudge-brownies" onclick="toggleExpand(this)">
       <span class="rr-num">18</span>
       <span class="rr-name">Bakery-Style Fudge Brownies</span>
       <span class="rr-meta">Brownies · Chocolate · Fudgy</span>
       <span class="rr-arrow">→</span>
-    </a>
-    <a href="DRC_recipes_v13.html#sourdough-cinnamon-roll-focaccia" class="recipe-row" data-cat="desserts">
+    </div>
+    <div class="recipe-row" data-cat="desserts" data-slug="sourdough-cinnamon-roll-focaccia" onclick="toggleExpand(this)">
       <span class="rr-num">19</span>
       <span class="rr-name">Sourdough Cinnamon Roll Focaccia</span>
       <span class="rr-meta">Sourdough · Bread · Cinnamon · Brunch</span>
       <span class="rr-arrow">→</span>
-    </a>
+    </div>
   </div>
 
   <!-- A–Z INDEX -->
@@ -1795,6 +1841,85 @@ footer {
 </footer>
 
 <script>
+// Slugs that have full recipe pages in DRC_recipes_v13.html
+const LIVE_SLUGS = new Set([
+  'authentic-mexican-rice','biscoff-cookies','blueberry-muffins','blueberry-pop-tarts',
+  'bolognese','browned-butter-cookies','buttermilk-breakfast','cafe-rio-dressing',
+  'charred-poblano-black-bean-salad','chicken-burritos','chicken-marsala','chicken-vindaloo',
+  'chipotle-barbacoa','cinnamon-rolls-brown-butter','coconut-lime-chicken',
+  'creamy-garlic-chicken-pasta','crew-bbq-sauce','crockpot-meatballs','detroit-pizza',
+  'french-chicken-casserole','fudge-brownies','green-chili-chicken','jalapeno-crack-chicken',
+  'jamaican-brown-stew-chicken','jamaican-rice-peas','jollof-rice','kneaders-french-toast',
+  'korean-braised-short-ribs','korean-fried-chicken','kung-pao-chicken','la-galbi',
+  'lemongrass-chicken','mac-and-cheese','mastros-butter-cake','moo-shu-chicken',
+  'pad-thai-sauce','pork-adobo','pork-chile-verde','pumpkin-cinnamon-rolls',
+  'raspberry-muffins','salsa-de-rabano','scotcheroos','shepherds-pie','short-rib-lasagna',
+  'short-rib-ragu','shredded-beef-tacos','sourdough-cinnamon-roll-focaccia',
+  'sourdough-english-muffins','sourdough-sticky-buns','spicy-vodka-pasta','texas-pulled-pork',
+  'toffee-chocolate-chip-cookies','torchys-queso','turmeric-rice-combo','tuscan-chicken-pasta',
+  'white-chicken-chili','world-peace-cookies'
+]);
+
+function toggleExpand(row) {
+  // Don't re-expand a cloned search result that lacks a sibling slot
+  const slug = row.getAttribute('data-slug');
+  if (!slug) return;
+
+  // If already open, close it
+  if (row.classList.contains('expanded')) {
+    row.classList.remove('expanded');
+    const panel = row.nextElementSibling;
+    if (panel && panel.classList.contains('expand-panel')) {
+      panel.classList.remove('open');
+      setTimeout(() => { if (!panel.classList.contains('open')) panel.style.display = 'none'; }, 180);
+    }
+    return;
+  }
+
+  // Close any other open row in the same section
+  const section = row.closest('.recipe-section, .search-results-section');
+  if (section) {
+    section.querySelectorAll('.recipe-row.expanded').forEach(r => {
+      r.classList.remove('expanded');
+      const p = r.nextElementSibling;
+      if (p && p.classList.contains('expand-panel')) {
+        p.classList.remove('open');
+        p.style.display = 'none';
+      }
+    });
+  }
+
+  row.classList.add('expanded');
+
+  // Check if panel already exists
+  let panel = row.nextElementSibling;
+  if (!panel || !panel.classList.contains('expand-panel')) {
+    panel = document.createElement('div');
+    panel.className = 'expand-panel';
+    const inner = document.createElement('div');
+    inner.className = 'expand-inner';
+
+    if (LIVE_SLUGS.has(slug)) {
+      const link = document.createElement('a');
+      link.className = 'expand-link';
+      link.href = 'DRC_recipes_v13.html#' + slug;
+      link.textContent = 'View Full Recipe →';
+      inner.appendChild(link);
+    } else {
+      const msg = document.createElement('p');
+      msg.className = 'expand-coming';
+      msg.textContent = 'Recipe page coming soon — check back!';
+      inner.appendChild(msg);
+    }
+
+    panel.appendChild(inner);
+    row.parentNode.insertBefore(panel, row.nextSibling);
+  }
+
+  panel.style.display = 'block';
+  requestAnimationFrame(() => panel.classList.add('open'));
+}
+
 let currentTab = 'all';
 let activeFilter = 'all';
 
