@@ -344,6 +344,11 @@ nav {
   transition: opacity 0.15s;
 }
 .expand-link:hover { opacity: 0.7; }
+/* Inline recipe iframe */
+.recipe-iframe {
+  display: block; width: 100%; border: none;
+  min-height: 600px;
+}
 
 /* row open state */
 .recipe-row.expanded .rr-arrow { transform: rotate(90deg); color: var(--garlic); }
@@ -409,6 +414,7 @@ footer {
 
   /* Expand panel */
   .expand-inner { padding: 16px 16px 20px; }
+  .recipe-iframe { min-height: 500px; }
 }
 </style>
 </head>
@@ -2026,23 +2032,43 @@ function toggleExpand(row) {
   if (!panel || !panel.classList.contains('expand-panel')) {
     panel = document.createElement('div');
     panel.className = 'expand-panel';
-    const inner = document.createElement('div');
-    inner.className = 'expand-inner';
 
     if (LIVE_SLUGS.has(slug)) {
-      const link = document.createElement('a');
-      link.className = 'expand-link';
-      link.href = 'DRC_recipes_v13.html#' + slug;
-      link.textContent = 'View Full Recipe →';
-      inner.appendChild(link);
+      // Load recipe inline via iframe
+      const iframe = document.createElement('iframe');
+      iframe.className = 'recipe-iframe';
+      iframe.src = 'DRC_recipes_v13.html#' + slug;
+      iframe.title = 'Recipe';
+      iframe.setAttribute('scrolling', 'no');
+      // Auto-resize once loaded
+      iframe.addEventListener('load', function() {
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          // Hide the back button inside the iframe since we're inline
+          const backBtn = doc.querySelector('.back-btn');
+          if (backBtn) backBtn.style.display = 'none';
+          // Resize to content height
+          function resize() {
+            const h = doc.documentElement.scrollHeight;
+            if (h > 100) iframe.style.height = h + 'px';
+          }
+          resize();
+          // Re-check after images/fonts settle
+          setTimeout(resize, 400);
+          setTimeout(resize, 1200);
+        } catch(e) {}
+      });
+      panel.appendChild(iframe);
     } else {
+      const inner = document.createElement('div');
+      inner.className = 'expand-inner';
       const msg = document.createElement('p');
       msg.className = 'expand-coming';
       msg.textContent = 'Recipe page coming soon — check back!';
       inner.appendChild(msg);
+      panel.appendChild(inner);
     }
 
-    panel.appendChild(inner);
     row.parentNode.insertBefore(panel, row.nextSibling);
   }
 
