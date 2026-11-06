@@ -21060,5 +21060,45 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar
  </div></div>
 </div>
 
+
+<div id="recipe-pesto-chicken" class="recipe-page">
+ <div class="rp-hero"><div class="rp-hero-bg"></div><div class="rp-hero-grate"></div><div class="rp-hero-overlay"></div><div class="rp-hero-emoji"></div><div class="rp-photo-note">// photo by a rat, recipe by the crew</div></div>
+ <button class="back-btn" onclick="showList()">← Back to Recipes</button>
+ <div class="rp-header"><div>
+ <div class="rp-eyebrow">Crew Tested · Pasta · 30 Minutes</div>
+ <h1 class="rp-title">PESTO<br>CHICKEN PASTA</h1>
+ <p class="rp-voice">Golden seared chicken, penne, sun-dried tomatoes, and heavy cream — pesto goes in off the heat so it stays bright green and herby instead of turning dull. <strong>One pan, 30 minutes, restaurant quality.</strong></p>
+ <div class="rp-meta"><div class="rp-meta-item">⏱ <strong>30 min</strong></div><div class="rp-meta-item"> <strong>Serves: 4</strong></div></div>
+ </div>
+ <div class="rp-stats"><div class="rp-stats-head">Quick Stats</div><div class="rp-stats-body">
+ <div class="rp-stat-row"><span class="rp-stat-label">method</span><span class="rp-stat-val">One Pan · Skillet</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">pasta</span><span class="rp-stat-val">Penne with Ridges</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">crew rating</span><span class="rp-stat-val green">9.3 / 10</span></div>
+ </div></div></div>
+ <div class="rp-body"><div>
+ <h2 class="rp-sec-title">Ingredients</h2>
+ <div class="ing-copy-bar"><span class="ing-copy-label">Ingredients</span><div style="display:flex;gap:8px;align-items:center;"><button class="ing-uncheck-btn" onclick="uncheckAll('pesto-chicken')">Clear All</button><button class="ing-copy-btn" id="copy-btn-pesto-chicken" onclick="copyIngredients('pesto-chicken')">Copy List</button></div></div>
+ <div class="ing-group"><div class="ing-group-head">The Dish</div>
+ <div class="ing-check-row" data-name="Boneless skinless chicken breasts cut into 1-inch pieces" data-amt="1 lb" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Chicken breasts <span>boneless, cut into 1-inch pieces</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 lb</div></div>
+ <div class="ing-check-row" data-name="Italian seasoning" data-amt="1 tsp" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Italian seasoning</div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">1 tsp</div></div>
+ <div class="ing-check-row" data-name="Kosher salt and black pepper" data-amt="to taste" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Kosher salt + black pepper</div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">to taste</div></div>
+ <div class="ing-check-row" data-name="Penne pasta preferably with ridges" data-amt="8 oz" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Penne pasta <span>preferably with ridges</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">8 oz</div></div>
+ <div class="ing-check-row" data-name="Extra virgin olive oil" data-amt="2 tbsp" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Extra virgin olive oil</div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">2 tbsp</div></div>
+ <div class="ing-check-row" data-name="Heavy cream" data-amt="½ cup" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Heavy cream</div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">½ cup</div></div>
+ <div class="ing-check-row" data-name="Parmesan cheese grated" data-amt="¼ cup" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Parmesan <span>grated, plus more to serve</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">¼ cup</div></div>
+ <div class="ing-check-row" data-name="Sun-dried tomatoes drained if in oil" data-amt="¼ cup" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Sun-dried tomatoes <span>drained if packed in oil</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">¼ cup</div></div>
+ <div class="ing-check-row" data-name="Basil pesto homemade or quality store-bought" data-amt="½ cup" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Basil pesto <span>homemade or quality store-bought</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">½ cup</div></div>
+ <div class="ing-check-row" data-name="Red pepper flakes" data-amt="½–1 tsp" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Red pepper flakes</div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">½–1 tsp</div></div>
+ <div class="ing-check-row" data-name="Fresh basil leaves torn for garnish" data-amt="handful" data-recipe="pesto-chicken" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Fresh basil <span>torn, for garnish</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">handful</div></div>
+ </div></div>
+ <div class="steps-wrap"><h2 class="rp-sec-title">How We Make It</h2>
+ <div class="step reveal"><div class="step-num">1</div><div><div class="step-title">Season the chicken</div><p class="step-text">Toss chicken pieces with Italian seasoning and a big pinch of kosher salt and black pepper until coated.</p></div></div>
+ <div class="step reveal"><div class="step-num">2</div><div><div class="step-title">Cook the pasta</div><p class="step-text">Bring a pot of water to a boil and salt it well — about 1 tablespoon. Cook penne until al dente, 8–9 minutes. Before draining, reserve 1 cup of the starchy pasta water. Drain.</p><div class="step-tip">// Don't skip the pasta water. It's your insurance policy if the sauce gets too thick — a splash at a time turns it glossy and coated.</div></div></div>
+ <div class="step reveal"><div class="step-num">3</div><div><div class="step-title">Sear the chicken</div><p class="step-text">While pasta cooks, heat olive oil in a large non-stick skillet over medium-high. Add chicken in a single layer and cook, tossing occasionally, until golden brown outside and cooked through — about 7–8 minutes.</p></div></div>
+ <div class="step reveal"><div class="step-num">4</div><div><div class="step-title">Build the sauce</div><p class="step-text">Lower the heat. Add the drained pasta, heavy cream, parmesan, and sun-dried tomatoes to the pan with the chicken. Stir everything together until well combined and the sauce coats the pasta. Add pasta water a couple tablespoons at a time if it looks dry — you want it glossy, not soupy.</p></div></div>
+ <div class="step reveal"><div class="step-num">5</div><div><div class="step-title">Finish with pesto</div><p class="step-text">Turn off the heat and move the pan off the burner. Stir in the basil pesto — adding it off heat keeps it bright green and prevents it from turning dull. Finish with parmesan, red pepper flakes, and torn basil. Serve immediately.</p><div class="step-tip">// Pesto off heat is the key technique. The moment you cook pesto it loses its color and that fresh herby flavor. Kill the heat first, then stir it in.</div></div></div>
+ </div></div>
+</div>
+
 </body>
 </html>
