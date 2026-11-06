@@ -21100,5 +21100,45 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSidebar
  </div></div>
 </div>
 
+
+<div id="recipe-potroast" class="recipe-page">
+ <div class="rp-hero"><div class="rp-hero-bg"></div><div class="rp-hero-grate"></div><div class="rp-hero-overlay"></div><div class="rp-hero-emoji"></div><div class="rp-photo-note">// photo by a rat, recipe by the crew</div></div>
+ <button class="back-btn" onclick="showList()">← Back to Recipes</button>
+ <div class="rp-header"><div>
+ <div class="rp-eyebrow">Crew Tested · Sunday Dinner · Dutch Oven</div>
+ <h1 class="rp-title">PERFECT<br>POT ROAST</h1>
+ <p class="rp-voice">Chuck roast dredged in seasoned flour, seared hard on all sides, then braised low and slow on a bed of sweet onions for 3+ hours. <strong>The onions become the sauce. The drippings are everything. Add root vegetables the last hour and you have a full meal.</strong></p>
+ <div class="rp-meta"><div class="rp-meta-item">⏱ <strong>3 to 3½ hours</strong></div><div class="rp-meta-item"> <strong>Serves: 8</strong></div></div>
+ </div>
+ <div class="rp-stats"><div class="rp-stats-head">Quick Stats</div><div class="rp-stats-body">
+ <div class="rp-stat-row"><span class="rp-stat-label">method</span><span class="rp-stat-val">Dutch Oven · 300°F</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">cut</span><span class="rp-stat-val">Boneless Chuck Roast</span></div>
+ <div class="rp-stat-row"><span class="rp-stat-label">crew rating</span><span class="rp-stat-val green">9.5 / 10</span></div>
+ </div></div></div>
+ <div class="rp-body"><div>
+ <h2 class="rp-sec-title">Ingredients</h2>
+ <div class="ing-copy-bar"><span class="ing-copy-label">Ingredients</span><div style="display:flex;gap:8px;align-items:center;"><button class="ing-uncheck-btn" onclick="uncheckAll('potroast')">Clear All</button><button class="ing-copy-btn" id="copy-btn-potroast" onclick="copyIngredients('potroast')">Copy List</button></div></div>
+ <div class="ing-group"><div class="ing-group-head">The Roast</div>
+ <div class="ing-check-row" data-name="Boneless beef chuck roast" data-amt="~4 lbs" data-recipe="potroast" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Boneless beef chuck roast</div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">~4 lbs</div></div>
+ <div class="ing-check-row" data-name="All-purpose flour" data-amt="¼ cup" data-recipe="potroast" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">All-purpose flour</div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">¼ cup</div></div>
+ <div class="ing-check-row" data-name="Salt and freshly ground black pepper" data-amt="to taste" data-recipe="potroast" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Salt + black pepper</div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">to taste</div></div>
+ <div class="ing-check-row" data-name="Seasoning salt optional" data-amt="to taste" data-recipe="potroast" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Seasoning salt <span>optional</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">to taste</div></div>
+ <div class="ing-check-row" data-name="Vegetable oil" data-amt="2 tbsp" data-recipe="potroast" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Vegetable oil</div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">2 tbsp</div></div>
+ </div>
+ <div class="ing-group"><div class="ing-group-head">Vegetables</div>
+ <div class="ing-check-row" data-name="Large sweet onions halved crosswise" data-amt="3 large" data-recipe="potroast" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Sweet onions <span>peeled, halved crosswise</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">3 large</div></div>
+ <div class="ing-check-row" data-name="Carrots chopped" data-amt="4 cups" data-recipe="potroast" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Carrots <span>chopped</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">4 cups</div></div>
+ <div class="ing-check-row" data-name="Potatoes parsnips or turnips chopped peeled" data-amt="4 cups" data-recipe="potroast" onclick="toggleCheck(this)"><input type="checkbox" onclick="event.stopPropagation();toggleCheck(this.parentElement)"><div class="ing-name">Potatoes, parsnips, or turnips <span>peeled, chopped</span></div><div class="ing-amt" style="margin-left:auto;white-space:nowrap;">4 cups</div></div>
+ </div></div>
+ <div class="steps-wrap"><h2 class="rp-sec-title">How We Make It</h2>
+ <div class="step reveal"><div class="step-num">1</div><div><div class="step-title">Preheat and prep</div><p class="step-text">Place a rack in the center of the oven and preheat to 300°F. Pat the roast completely dry with paper towels — moisture is the enemy of a good sear.</p></div></div>
+ <div class="step reveal"><div class="step-num">2</div><div><div class="step-title">Dredge the roast</div><p class="step-text">Mix flour with salt, pepper, and seasoning salt in a shallow dish. Dredge the roast on all sides in the seasoned flour, pressing so it sticks. Shake off the excess and set aside.</p><div class="step-tip">// The flour crust forms a barrier that browns deeply and thickens the braising liquid as the roast cooks — don't skip this step.</div></div></div>
+ <div class="step reveal"><div class="step-num">3</div><div><div class="step-title">Sear hard</div><p class="step-text">Heat vegetable oil in a 5- to 6-quart Dutch oven over high heat until shimmering. Add the roast and sear each side until deeply browned, about 3–4 minutes per side. Don't rush it — you want real color. Remove the casserole from the heat and transfer the roast to a plate.</p><div class="step-tip">// Don't move the roast until it releases naturally. If it sticks, it's not ready to flip. Let the crust form.</div></div></div>
+ <div class="step reveal"><div class="step-num">4</div><div><div class="step-title">Build the braise</div><p class="step-text">Place the onion halves cut side down in the bottom of the Dutch oven — they're the base and will melt into an onion gravy. Set the seared roast on top of the onions. Cover and place in the 300°F oven.</p></div></div>
+ <div class="step reveal"><div class="step-num">5</div><div><div class="step-title">Braise low and slow</div><p class="step-text">Bake covered for 2 to 2½ hours. About 1 hour before it's done, uncover and add the carrots and potatoes (or other root vegetables). Spoon the braising juices over the vegetables to baste them. Replace the lid and return to the oven for the final hour — total cook time 3 to 3½ hours, until the meat is tender and the juices have thickened.</p><div class="step-tip">// The roast is done when it falls apart easily when probed with a fork — no resistance. If it's still fighting you, give it another 30 minutes.</div></div></div>
+ <div class="step reveal"><div class="step-num">6</div><div><div class="step-title">Slice and serve</div><p class="step-text">Remove the roast and slice it against the grain. Plate with the carrots, onions, and other vegetables. Spoon the pan juices generously over the top — that's the sauce.</p></div></div>
+ </div></div>
+</div>
+
 </body>
 </html>
